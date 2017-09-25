@@ -1,0 +1,18 @@
+.social {
+  margin-right: .5rem;
+
+  font-size: 300%;
+  text-decoration: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social-r {
+  font-family: $social-r;
+}
+
+.social-p {
+  font-family: $social-p;
+}
