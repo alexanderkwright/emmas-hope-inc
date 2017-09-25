@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -osx-moz-font-smoothing: grayscale;
+
+  font-family: $body-font;
+  font-size: 110%;
+  line-height: 1.5;
+
+  @media (min-width: 450px) {
+    font-size: 130%;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

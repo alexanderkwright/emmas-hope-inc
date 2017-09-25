@@ -1,0 +1,47 @@
+.cta {
+  position: relative;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  padding-bottom: 4.6875rem;
+
+  background-color: $gold-light;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    background: url('../img/cta-bg-top--small.jpg') no-repeat;
+    background-size: cover;
+    top: 0;
+    height: 57px;
+  }
+
+  &::after {
+    background: url('../img/cta-bg-bottom--small.jpg') no-repeat;
+    background-size: cover;
+    bottom: 0;
+    height: 75px;
+  }
+
+  &-flower {
+    margin: 0;
+    transform: translateY(-2rem);
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

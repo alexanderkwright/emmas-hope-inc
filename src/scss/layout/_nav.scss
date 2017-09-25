@@ -1,0 +1,7 @@
+.header-nav {
+  display: none;
+
+  @media (min-width: 500px) {
+    display: block;
+  }
+}

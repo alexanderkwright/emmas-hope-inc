@@ -1,0 +1,24 @@
+<footer class="site-footer" role="footer">
+  <div class="site-footer__col">
+    <h3>Mailing Address</h3>
+    <address>
+    Emma's Hope, Inc.<br>
+    PO Box 105<br>
+    Sherrill, NY, 13461
+    </address>
+  </div>
+  <div class="site-footer__col">
+    <h3>Connect With Us</h3>
+    <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a>
+    <a href="tel:+13152175567">+1 315 217 5567</a>
+  </div>
+  <div class="site-footer__col">
+    <h3>Stay Updated</h3>
+    <a class="social social-r" href="https://www.facebook.com/emmashopeinc/" target="_blank">f</a>
+    <a class="social social-p" href="https://instagram.com/emmashopeinc" target="_blank">i</a>
+  </div>
+  <p class="site-footer__legal">
+    <span>Est. Aug 2017.</span>
+    <span>Emma's Hope, Inc. is a registered 501(c)(3) nonprofit organization.</span>
+  </p>
+</footer>

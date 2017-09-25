@@ -1,0 +1,10 @@
+p { 
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  font-size: 110%;
+
+  @media (min-width: 450px) {
+    font-size: 130%;
+  }
+}

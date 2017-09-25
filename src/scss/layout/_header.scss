@@ -1,0 +1,35 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  padding: .5rem 1rem;
+  width: 100%;
+
+  background-color: $white;
+  border-top: 1px solid darken($white, 5%);
+  box-shadow: 0 -1px 10px rgba($black, .05);
+  z-index: 10;
+
+  @media (min-width: 500px) {
+    position: static;
+    width: auto;
+  }
+}
+  .header-logo {
+    height: 42px;
+    width: 42px;
+
+    border: 1px solid $gold;
+    border-radius: 50%;
+    color: $black;
+    font-family: $logo-font;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+  }

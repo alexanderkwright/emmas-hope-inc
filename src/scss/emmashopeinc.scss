@@ -1,6 +1,5 @@
 // Config
 @import 'vars/*';
-@import 'functions/*';
 @import 'mixins/*';
 
 
@@ -13,9 +12,10 @@
 
 
 // Pieces
-@import 'components/**/*';
-@import 'templates/**/*';
-@import 'pages/**/*';
+@import 'components/*';
+@import 'widgets/*';
+@import 'layout/*';
+@import 'pages/*';
 
 
 // Variations through Events

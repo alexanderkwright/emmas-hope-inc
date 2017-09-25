@@ -1,0 +1,23 @@
+.button {
+  padding: .5rem 1rem;
+
+  display: inline-block;
+
+  background-color: $pink;
+  border: 0;
+  border-radius: 30px;
+  color: $white;
+  font-family: $body-font;
+  font-size: 100%;
+  text-decoration: none;
+
+  &--nobg {
+    padding: 0;
+    background-color: transparent;
+    color: $black;
+  }
+
+  &--large {
+    padding: 1rem 2rem;
+  }
+}

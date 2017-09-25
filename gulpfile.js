@@ -1,10 +1,13 @@
+const gulp = require('gulp');
+const plugins = require('gulp-load-plugins');
 const critical = require('critical');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
-const gulp = require('gulp');
-const plugins = require('gulp-load-plugins');
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
+const notify = require('gulp-notify');
 const source = require('vinyl-source-stream');
 const fs = require('fs');
 
@@ -16,6 +19,10 @@ const paths = {
   css: {
     src: './src/scss/',
     dest: './public/css/'
+  },
+  images: {
+    src: './src/img/**/*',
+    dest: './public/img/'
   }
 };
 
@@ -24,13 +31,13 @@ const paths = {
 /* Development
 /* ----------------- */
 
-gulp.task('development', ['scripts', 'styles'], () => {
+gulp.task('development', ['scripts', 'templates', 'styles', 'images'], () => {
   browserSync({
-    files: [paths.css.src + '**/*.scss', paths.js.src + '**/*.js', './pages/**/*.html'],
-    server: false,
+    server: {
+      baseDir: './public/'
+    },
     open: false,
     online: false,
-    proxy: 'localhost:8000',
     notify: false,
     snippetOptions: {
       rule: {
@@ -42,6 +49,7 @@ gulp.task('development', ['scripts', 'styles'], () => {
 
   gulp.watch(paths.css.src + '**/*.scss', ['styles']);
   gulp.watch(paths.js.src + '**/*.js', ['scripts']);
+  gulp.watch('./pages/**/*.html', ['templates']);
 });
 
 
@@ -74,12 +82,30 @@ gulp.task('scripts', () => {
 });
 
 
+
+/* ----------------- */
+/* Templates
+/* ----------------- */
+gulp.task('templates', () => {
+  return gulp.src('./pages/**/*.+(html|nunjucks)')
+    .pipe(plugins().data(function() {
+      return require('./src/data.json')
+    }))
+    .pipe(plugins().nunjucksRender({
+      path: ['./templates/']
+    }))
+    .pipe(gulp.dest('public'))
+    .pipe(browserSync.stream());
+});
+
+
 /* ----------------- */
 /* Styles
 /* ----------------- */
 
 gulp.task('styles', () => {
   return gulp.src(paths.css.src + '**/*.scss')
+    .pipe(plugins().sassGlob())
     .pipe(plugins().sourcemaps.init())
     .pipe(plugins().postcss([
       autoprefixer({ browsers: ['last 2 versions'] })
@@ -88,6 +114,17 @@ gulp.task('styles', () => {
     .pipe(plugins().sourcemaps.write())
     .pipe(gulp.dest(paths.css.dest))
     .pipe(browserSync.stream());
+});
+
+
+/* ----------------- */
+/* Images
+/* ----------------- */
+gulp.task('images', () => {
+  return gulp.src( paths.images.src )
+    .pipe( cache( imagemin( { optimizationLevel: 3, progressive: true, interlaced: true } ) ) )
+    .pipe( gulp.dest( paths.images.dest ) )
+    .pipe( notify( { message: 'Images task complete.' } ) )
 });
 
 

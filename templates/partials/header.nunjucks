@@ -1,0 +1,10 @@
+<header class="site-header" role="header">
+  <a class="header-logo" href="/">E</a>
+
+  <a class="mobile-donate button" href="/donate.html">Donate</a>
+
+  {% import 'macros/nav-macros.nunjucks' as nav %}
+  {{ nav.active('about') }}
+
+  <button class="mobile-menu button button--nobg  js-mobile-menu" aria-label="Mobile Menu">Menu</button>
+</header>
