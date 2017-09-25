@@ -1,4 +1,7 @@
 .site-logo {
+  @media (min-width: 840px) {
+    margin-top: 5rem;
+  }
   text-align: center;
 
   img {
@@ -10,5 +13,38 @@
   figcaption {
     font-family: $header-font;
     font-size: 250%;
+  }
+}
+
+.mission {
+
+  @media (min-width: 840px) {
+    margin-top: 5rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+
+    img {
+      margin-top: 4rem;
+      max-width: 500px
+    }
+    
+    &-content {
+      padding-left: 4rem;
+      padding-right: 2rem;
+
+      max-width: 52ch;
+
+      h2 {
+        text-align: left;
+      }
+
+      p {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 }

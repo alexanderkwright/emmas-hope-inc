@@ -5,7 +5,7 @@
 
   background-color: $pink;
   border: 0;
-  border-radius: 30px;
+  border-radius: 60px;
   color: $white;
   font-family: $body-font;
   font-size: 100%;
@@ -15,6 +15,10 @@
     padding: 0;
     background-color: transparent;
     color: $black;
+  }
+
+  &--small {
+    padding: .25rem .5rem;
   }
 
   &--large {

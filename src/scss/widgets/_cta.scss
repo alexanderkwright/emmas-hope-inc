@@ -7,6 +7,10 @@
   background-color: $gold-light;
   text-align: center;
 
+  @media (min-width: 840px) {
+    margin-top: 12rem;
+  }
+
   &::before,
   &::after {
     content: '';
@@ -21,6 +25,12 @@
     background-size: cover;
     top: 0;
     height: 57px;
+
+    @media (min-width: 840px) {
+      background: url('../img/cta-bg-top--full.jpg') no-repeat;
+      background-size: 100%;
+      height: 100px;
+    }
   }
 
   &::after {
@@ -28,11 +38,22 @@
     background-size: cover;
     bottom: 0;
     height: 75px;
+
+    @media (min-width: 840px) {
+      background: url('../img/cta-bg-bottom--full.jpg') no-repeat;
+      background-size: 100%;
+      height: 338px;
+      bottom: -258px;
+    }
   }
 
   &-flower {
     margin: 0;
     transform: translateY(-2rem);
+
+    @media (min-width: 840px) {
+      transform: translateY(-3rem);
+    }
 
     img {
       margin-left: auto;
@@ -40,8 +61,20 @@
     }
   }
 
+  &-copy {
+    max-width: 42ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  &-helper {
+    a {
+      color: $pink;
+    }
   }
 }

@@ -5,9 +5,29 @@
   background: url('../img/footer-flowers--full.png') bottom right no-repeat;
   background-size: 40%;
 
+  @media (min-width: 840px) {
+    display: flex;
+    flex-flow: row wrap;
+
+    margin-bottom: 0;
+    padding: 0 2rem 0;
+
+    background-size: 30%;
+  }
+
   &__col {
     margin-bottom: 4rem;
     text-align: center;
+
+    @media (min-width: 840px) {
+      flex: 0 0 calc(100% / 3);
+
+      text-align: left;
+
+      h3 {
+        text-align: left;
+      }
+    }
 
     a {
       display: block;
@@ -28,6 +48,11 @@
   &__legal {
     font-size: 100%;
     text-align: center;
+
+    @media (min-width: 840px) {
+      flex-basis: 100%;
+      text-align: left;
+    }
 
     span:first-child {
       display: block;

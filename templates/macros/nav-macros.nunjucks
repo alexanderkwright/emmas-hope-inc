@@ -2,7 +2,7 @@
 <nav class="header-nav" role="navigation">
   <ul>
     {% for i in ['about', 'services', 'emma\'s story', 'events', 'contact', 'donate'] %}
-      <li><a class="{% if activePage == i %}active{% endif %}{% if i == 'donate' %} button{% endif %}" href="/{{ i }}.html">{{ i | title }}</a></li>
+      <li><a class="{% if activePage == i %}active{% endif %}{% if i == 'donate' %} button button--small{% endif %}" href="/{{ i }}.html">{{ i | title }}</a></li>
     {% endfor %}
   </ul>
 </nav>

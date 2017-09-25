@@ -13,8 +13,4 @@ h3 { font-size: 275%; }
 
 h1, h2, h3 {
   text-align: center;
-
-  @media (min-width: 500px) {
-    text-align: left;
-  }
 }
