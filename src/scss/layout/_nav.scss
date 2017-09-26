@@ -22,7 +22,7 @@
     transform: translateY(0);
   }
 
-  @media (min-width: 840px) {
+  @media (min-width: 940px) {
     display: block;
     width: auto;
     height: auto;
@@ -44,7 +44,7 @@
     list-style: none;
     text-align: center;
 
-    @media (min-width: 840px) {
+    @media (min-width: 940px) {
       text-align: left;
     }
   }
@@ -52,7 +52,7 @@
     li {
       display: block;
 
-      @media (min-width: 840px) {
+      @media (min-width: 940px) {
         display: inline-block;
         margin-left: 1.5rem;
       }
@@ -66,7 +66,7 @@
       color: $black;
       text-decoration: none;
 
-      @media (min-width: 840px) {
+      @media (min-width: 940px) {
         display: inline;
         padding-top: 0;
         padding-bottom: 0;
@@ -76,7 +76,7 @@
         display: none;
         color: $white;
 
-        @media (min-width: 840px) {
+        @media (min-width: 940px) {
           display: inline-block;
           padding-top: .3rem;
           padding-bottom: .3rem;
