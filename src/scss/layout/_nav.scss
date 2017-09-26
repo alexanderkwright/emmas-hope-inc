@@ -1,8 +1,31 @@
 .header-nav {
-  display: none;
+  position: fixed;
+  bottom: 59px; left: 0;
+  height: calc(50vh - 59px);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $white;
+  box-shadow: 0 -1px 10px rgba($black, .05);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  transform: translateY(400vh);
+  z-index: -1;
+
+  .has-openMenu & {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
 
   @media (min-width: 840px) {
     display: block;
+    position: static;
+    box-shadow: none;
   }
 
   font-size: 90%;
@@ -11,19 +34,43 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: center;
+
+    @media (min-width: 840px) {
+      text-align: left;
+    }
   }
 
     li {
-      display: inline-block;
-      margin-left: 1.5rem;
+      display: block;
+
+      @media (min-width: 840px) {
+        display: inline-block;
+        margin-left: 1.5rem;
+      }
     }
 
     a {
+      display: block;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+
       color: $black;
       text-decoration: none;
 
+      @media (min-width: 840px) {
+        display: inline;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
       &.button {
+        display: none;
         color: $white;
+
+        @media (min-width: 840px) {
+          display: inline;
+        }
       }
     }
 }
