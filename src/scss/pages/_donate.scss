@@ -1,9 +1,7 @@
 .donation-buttons {
   margin-top: 2.5rem;
   
-  a {
-    margin-right: 1.5rem;
-
-    &:last-child { margin-right: 0; }
+  input[type="image"] {
+    max-width: 200px;
   }
 }
