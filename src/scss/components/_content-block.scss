@@ -9,4 +9,22 @@
   p {
     margin-left: 0;
   }
+
+  dl {
+    display: flex;
+    flex-flow: row wrap;
+  }
+    dt {
+      flex-basis: 150px;
+      margin-bottom: 1rem;
+      padding-right: 1rem;
+
+      font-weight: bold;
+      text-align: right;
+    }
+
+    dd {
+      margin: 0;
+      flex: 1 1 calc(100% - 150px);
+    }
 }
