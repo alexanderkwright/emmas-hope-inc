@@ -1,6 +1,5 @@
 // Config
 @import 'vars/*';
-@import 'mixins/*';
 
 
 // General DOM selector styles
@@ -17,11 +16,3 @@
 @import 'widgets/*';
 @import 'layout/*';
 @import 'pages/*';
-
-
-// Variations through Events
-@import 'states/*';
-
-
-// General UI helpers
-@import 'utility/*';

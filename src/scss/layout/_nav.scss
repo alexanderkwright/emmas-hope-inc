@@ -24,8 +24,16 @@
 
   @media (min-width: 840px) {
     display: block;
+    width: auto;
+    height: auto;
     position: static;
+
+    background-color: transparent;
     box-shadow: none;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    z-index: initial;
   }
 
   font-size: 90%;
@@ -69,7 +77,9 @@
         color: $white;
 
         @media (min-width: 840px) {
-          display: inline;
+          display: inline-block;
+          padding-top: .3rem;
+          padding-bottom: .3rem;
         }
       }
     }

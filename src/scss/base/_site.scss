@@ -8,5 +8,14 @@
   @media (min-width: 840px) {
     padding-top: 0;
     background-size: 333px 354px;
-  } 
+  }
+
+  &-title {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+
+    background: url('../img/title-separator@2x.png') center top no-repeat;
+    background-size: 174px;
+  }
 }

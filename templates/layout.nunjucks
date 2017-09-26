@@ -13,7 +13,9 @@
     {% block site_content %}{% endblock %}
   </main>
 
-  {% include "partials/cta.nunjucks" %}
+  {% block cta %}
+    {% include "partials/cta.nunjucks" %}
+  {% endblock %}
 
   {% include "partials/footer.nunjucks" %}
 

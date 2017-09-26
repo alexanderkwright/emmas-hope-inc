@@ -1,0 +1,39 @@
+{% extends "layout.nunjucks" %}
+
+{% block site_title %} | make a donation via PayPal or mail a check.{% endblock %}
+
+{% block page_class %}donate{% endblock %}
+
+{% block site_content %}
+  <section class="content-block">
+    <h1 class="site-title">Donate</h1>
+    <h2>Give Online with PayPal</h2>
+    <p>Because of your gift today, you are bringing joy to the parent of a child diagnosed with a life-threatening illness, and reminding them that they are loved. As parents who have been there - thank you from the bottom of our hearts.</p>
+    <small><strong>*NOTE* You don't need a PayPal account to give - all major credit cards are accepted.</strong></small>
+
+    <div class="donation-buttons">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="L6C9MYBEFRG72">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Donate to Emma's Hope, Inc. online using PayPal here.">
+        <img alt="" aria-hidden="true" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </div>
+    
+  </section>
+
+  <section class="content-block">
+    <h2>Mail a Check</h2>
+    <p>If you would like to mail a check instead of giving online, you may send your gift to the PO box listed below.</p>
+    <address>
+      Emma's Hope, Inc.<br>
+      PO Box 105<br>
+      Sherrill, NY 13461
+    </address>
+    <p><em>Please make all checks payable to: <strong>Emma's Hope, Inc.</strong></em></p>
+  </section>
+{% endblock %}
+
+{% block cta %}
+  {% include "partials/cta-donate.nunjucks" %}
+{% endblock %}
