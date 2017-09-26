@@ -3,5 +3,9 @@
   
   input[type="image"] {
     max-width: 200px;
+
+    @media (min-width: 600px) {
+      max-width: 300px;
+    }
   }
 }
