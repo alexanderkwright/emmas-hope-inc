@@ -2,11 +2,11 @@
   padding-top: 6rem;
   margin: 0;
 
-  background: url('../img/header-flowers--full.png') left top no-repeat;
+  background: url('../img/header-flowers--full@2x.png') left top no-repeat;
   background-size: 30%;
 
   @media (min-width: 840px) {
     padding-top: 0;
-    background-size: 20%;
+    background-size: 333px 354px;
   } 
 }
