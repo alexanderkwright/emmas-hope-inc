@@ -1,5 +1,11 @@
 .donation-buttons {
   margin-top: 2.5rem;
+  text-align: center;
+
+  small {
+    display: block;
+    margin-bottom: 1rem;
+  }
   
   input[type="image"] {
     max-width: 250px;

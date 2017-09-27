@@ -1,0 +1,13 @@
+.notice {
+  margin-top: 2rem;
+  padding: 1rem;
+
+  background-color: lighten($gold-light, 5%);
+  border: 1px solid darken($gold-light, 5%);
+  border-radius: 6px;
+  font-size: 80%;
+
+  p {
+    margin: 0;
+  }
+}
