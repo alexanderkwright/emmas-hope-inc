@@ -1,0 +1,22 @@
+.image {
+  margin-bottom: 2rem;
+
+  &--half {
+    max-width: 50%;
+  }
+
+  &--right {
+    float: right;
+    margin-left: -2rem;
+
+    transform: translateX(100px);
+  }
+
+  &--left {
+    float: left;
+
+    margin-right: -2rem;
+
+    transform: translateX(-100px);
+  }
+}
