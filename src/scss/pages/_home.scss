@@ -22,6 +22,15 @@
 
 .mission {
 
+  &-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    p {
+      margin-left: 0;
+    }
+  }
+
   @media (min-width: 840px) {
     margin-top: 5rem;
 
@@ -46,7 +55,6 @@
       }
 
       p {
-        margin-left: 0;
         margin-right: 0;
       }
     }
