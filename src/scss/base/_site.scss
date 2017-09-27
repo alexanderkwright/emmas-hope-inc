@@ -11,11 +11,15 @@
   }
 
   &-title {
-    margin-top: 3rem;
+    margin-top: 0;
     margin-bottom: 3rem;
     padding-top: 2rem;
 
     background: url('../img/title-separator@2x.png') center top no-repeat;
     background-size: 174px;
+
+    @media (min-width: 450px) {
+      margin-top: 3rem;
+    }
   }
 }

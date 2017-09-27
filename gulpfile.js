@@ -122,7 +122,7 @@ gulp.task('styles', () => {
 /* ----------------- */
 gulp.task('images', () => {
   return gulp.src( paths.images.src )
-    .pipe( cache( imagemin( { optimizationLevel: 3, progressive: true, interlaced: true } ) ) )
+    .pipe( cache( imagemin( { optimizationLevel: 5, progressive: true, interlaced: true } ) ) )
     .pipe( gulp.dest( paths.images.dest ) )
     .pipe( notify( { message: 'Images task complete.' } ) )
 });
