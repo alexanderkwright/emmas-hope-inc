@@ -17,8 +17,39 @@
   <meta content="https://emmashopeinc.org/donate/" property="og:url" />
   <meta content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children with life-threatening illnesses. 100% of public donations go to supporting these parents." property="og:description" />
 
+  
+
   <link rel="preload" href="/css/emmashopeinc.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/emmashopeinc.css"></noscript>
+
+  <script>
+    !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+    !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(t){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+  </script>
+
+  <script>
+    var script = document.createElement('script');
+    script.onload = function() {
+      var glassAntiqua = new FontFaceObserver('Glass+Antiqua');
+      var montserratR  = new FontFaceObserver('Montserrat', { weight: 400 });
+      var montserratB  = new FontFaceObserver('Montserrat', { weight: 700 });
+
+      Promise.all([
+        glassAntiqua, montserratR, montserratB
+      ]).then(function() {
+        document.documentElement.className += "fonts-loaded";
+      }, function() {
+        document.documentElement.className += "fonts-unavailable";
+      });
+    };
+    script.src = "/js/fontfaceobserver.min.js";
+    document.head.appendChild(script);
+  </script>
+
+  <style>
+    html { font-family: "Trebuchet MS", Helvetica, sans-serif; }
+    html.fonts-loaded { font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif; }
+  </style>
 
   <link rel="mask-icon" href="/pinned-e.svg" color="#000000">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -92,9 +123,7 @@
 
     <p>Note to Emma:</p>
 
-    <!-- <div class="responsive-video"> -->
-        <iframe class="video" src="https://player.vimeo.com/video/235928996?byline=0" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <!-- </div> -->
+    <iframe class="video" src="https://player.vimeo.com/video/235928996?byline=0" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </section>
 
   </main>
@@ -135,26 +164,6 @@
   </p>
 </footer>
 
-  <script src="/js/index.min.js"></script>
-  <script src="/js/fontfaceobserver.min.js"></script>
-  <script>
-    (function(w) {
-      // if the class is already set, we're good.
-      if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
-        return;
-      }
-      var fontA = new w.FontFaceObserver( "Glass Antiqua" );
-      var fontB = new w.FontFaceObserver( "Montserrat", {
-        weight: 400
-      });
-      var fontC = new w.FontFaceObserver( "Montserrat", {
-        weight: 700
-      });
-
-      Promise.all([fontA.load(), fontB.load(), fontC.load()]).then(function() {
-        w.document.documentElement.className += " fonts-loaded";
-      });
-    })(this);
-  </script>
+  <script async src="/js/index.min.js"></script>
 
 </body>
