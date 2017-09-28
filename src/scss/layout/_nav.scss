@@ -83,11 +83,11 @@
           transition: width .2s ease;
         }
 
-        &:hover::after {
+        &:not(.button):hover::after {
           width: 100%;
         }
 
-        &.is-active::after {
+        &:not(.button).is-active::after {
           width: 100%;
         }
       }
