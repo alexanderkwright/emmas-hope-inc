@@ -1,2 +1,28 @@
 {
+  "NavItems" : [
+    {
+      "slug": "about",
+      "name": "About"
+    },
+    {
+      "slug": "services",
+      "name": "Services"
+    },
+    {
+      "slug": "emmas-story",
+      "name": "Emma's Story"
+    },
+    {
+      "slug": "events",
+      "name": "Events"
+    },
+    {
+      "slug": "contact",
+      "name": "Contact"
+    },
+    {
+      "slug": "donate",
+      "name": "Donate"
+    }
+  ]
 }

@@ -1,0 +1,7 @@
+<nav class="header-nav" role="navigation">
+  <ul>
+    {% for link in NavItems %}
+      <li><a class="{% if page_title == link.slug %}is-active{% endif %}{% if link.slug == 'donate' %} button button--small{% endif %}" href="/{{ link.slug }}.html">{{ link.name }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

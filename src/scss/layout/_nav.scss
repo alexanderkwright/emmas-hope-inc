@@ -67,9 +67,29 @@
       text-decoration: none;
 
       @media (min-width: 940px) {
+        position: relative;
         display: inline;
         padding-top: 0;
         padding-bottom: 0;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -6px; left: 0;
+          height: 3px;
+          width: 0;
+
+          background-color: $pink;
+          transition: width .2s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &.is-active::after {
+          width: 100%;
+        }
       }
 
       &.button {
