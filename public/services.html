@@ -8,9 +8,9 @@
   <meta name="keywords" content="charity, syracuse, give, help, parents, families, children, new york, life-threatening, illness, cancer, leukemia, childhood cancer, central new york, life-threatening illness, child diagnosed">
   <meta itemprop="name" content="Emma's Hope, Inc.">
   <meta itemprop="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
-  <meta itemprop="image" content="/img/logo@2x.png">
+  <meta itemprop="image" content="https://emmashopeinc.org/img/logo@2x.png">
 
-  <meta content="/img/emma-mission--full.jpg" property="og:image" />
+  <meta content="https://emmashopeinc.org/img/emma-mission--full.jpg" property="og:image" />
   <meta content="Emma's Hope, Inc." property="og:site_name" />
   <meta content="object" property="og:type" />
   <meta content="emmas-hope-inc" property="og:title" />
@@ -19,6 +19,11 @@
 
   <link href="https://fonts.googleapis.com/css?family=Glass+Antiqua|Montserrat:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/emmashopeinc.css">
+
+  <link rel="mask-icon" href="/pinned-e.svg" color="#000000">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 </head>
 <body class="site services">
   <header class="site-header  js-site-header" role="header">
@@ -101,5 +106,25 @@
 </footer>
 
   <script src="/js/index.min.js"></script>
+  <script src="/js/fontfaceobserver.min.js"></script>
+  <script>
+    (function(w) {
+      // if the class is already set, we're good.
+      if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+        return;
+      }
+      var fontA = new w.FontFaceObserver( "Glass Antiqua" );
+      var fontB = new w.FontFaceObserver( "Montserrat", {
+        weight: 400
+      });
+      var fontC = new w.FontFaceObserver( "Montserrat", {
+        weight: 700
+      });
+
+      Promise.all([fontA.load(), fontB.load(), fontC.load()]).then(function() {
+        w.document.documentElement.className += " fonts-loaded";
+      });
+    })(this);
+  </script>
 
 </body>

@@ -134,6 +134,7 @@ gulp.task('images', () => {
 
 gulp.task('cssmin', () => {
   return gulp.src(paths.css.src + '**/*.scss')
+    .pipe(plugins().sassGlob())
     .pipe(plugins().sass({
       'outputStyle': 'compressed'
     }).on('error', plugins().sass.logError))
@@ -158,7 +159,7 @@ gulp.task('jsmin', () => {
   .pipe(source('index.min.js'))
   .pipe(envs)
   .pipe(buffer())
-  .pipe(plugins().uglify())
+  .pipe(plugins().uglify().on('error', plugins().util.log))
   .pipe(envs.reset)
   .pipe(gulp.dest(paths.js.dest));
 });

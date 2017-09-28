@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>favicon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="48" cy="48" r="48"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="96" height="96" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Favicon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="96---xhdpi">
+            <g id="favicon">
+                <use id="Oval" stroke="#BE994E" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                <text id="E" font-family="Baskerville-Bold, Baskerville" font-size="72" font-weight="bold" fill="#000000">
+                    <tspan x="25" y="72">E</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
