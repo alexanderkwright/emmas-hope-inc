@@ -1,3 +1,9 @@
 .emmas-story p {
   margin-bottom: 4rem;
+
+  &:first-of-type:first-letter {
+    font-family: $logo-font;
+    font-size: 200%;
+    line-height: .5;
+  }
 }
