@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins');
-const critical = require('critical');
+const critical = require('critical').stream;
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync');
 const browserify = require('browserify');
@@ -31,7 +31,7 @@ const paths = {
 /* Development
 /* ----------------- */
 
-gulp.task('development', ['scripts', 'templates', 'styles', 'images'], () => {
+gulp.task('development', ['scripts', 'templates', 'styles'], () => {
   browserSync({
     server: {
       baseDir: './public/'
@@ -118,17 +118,6 @@ gulp.task('styles', () => {
 
 
 /* ----------------- */
-/* Images
-/* ----------------- */
-gulp.task('images', () => {
-  return gulp.src( paths.images.src )
-    .pipe( cache( imagemin( { optimizationLevel: 5, progressive: true, interlaced: true } ) ) )
-    .pipe( gulp.dest( paths.images.dest ) )
-    .pipe( notify( { message: 'Images task complete.' } ) )
-});
-
-
-/* ----------------- */
 /* Cssmin
 /* ----------------- */
 
@@ -164,9 +153,20 @@ gulp.task('jsmin', () => {
   .pipe(gulp.dest(paths.js.dest));
 });
 
+
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+  return gulp.src('public/*.html')
+    .pipe(critical({base: 'public/', inline: true, minify: true, css: ['public/css/emmashopeinc.css']}))
+    .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+    .pipe(gulp.dest('public'));
+});
+
 /* ----------------- */
 /* Taks
 /* ----------------- */
 
 gulp.task('default', ['development']);
 gulp.task('deploy', ['cssmin', 'jsmin']);
+gulp.task('crit', ['critical']);
