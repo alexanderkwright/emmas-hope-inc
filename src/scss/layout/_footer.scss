@@ -8,12 +8,17 @@
   @media (min-width: 840px) {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 
     margin-bottom: 0;
     padding: 0 2rem 0;
 
     background-size: 350px;
   }
+
+  @media (min-width: 1400px) { padding-top: 3rem; }
+  @media (min-width: 1700px) { padding-top: 5rem; }
+  @media (min-width: 2000px) { padding-top: 6.5rem; }
 
   &__col {
     margin-bottom: 4rem;
@@ -27,6 +32,10 @@
       h3 {
         text-align: left;
       }
+    }
+
+    @media (min-width: 1400px) {
+      max-width: 250px;
     }
 
     a {
@@ -53,6 +62,10 @@
       flex-basis: 100%;
       text-align: left;
       margin-left: 0;
+    }
+
+    @media (min-width: 1400px) {
+      text-align: center;
     }
 
     span:first-child {

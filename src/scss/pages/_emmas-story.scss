@@ -1,9 +1,13 @@
-.emmas-story p {
+.emmas-story .site-content p {
   margin-bottom: 4rem;
 
   &:first-of-type:first-letter {
     font-family: $logo-font;
     font-size: 200%;
     line-height: .5;
+  }
+
+  &.no-mb {
+    margin-bottom: .5rem;
   }
 }
