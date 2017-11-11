@@ -1,0 +1,101 @@
+{% extends "layout.nunjucks" %}
+
+{% set page_title = "christmas-cards" %}
+
+{% set num_sponsors = 0 %}
+{% set donation_total = 0 %}
+
+{% block site_title %}Give a Christmas Gift to Parents of Children Undergoing Cancer Treatment | {% endblock %}
+
+{% block page_class %}christmas-cards{% endblock %}
+
+{% block site_content %}
+  <section class="content-block">
+    <h1 class="site-title">Christmas Cards</h1>
+  </section>
+  
+  <section class="content-block">
+    <div class="progress">
+      <div class="progress-goal"><span class="js-goal">0</span> of 71 families</div>
+      <div class="progress-bar">
+        <div class="progress-meter  js-progress-meter"></div>
+      </div>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <span class="progress-number  js-percent">0%</span>
+          <span class="progress-label">Funded</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-raised">$0</span>
+          <span class="progress-label">Raised</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-days-left">0</span>
+          <span class="progress-label  js-days-label">Days til Christmas</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-sponsors">0</span>
+          <span class="progress-label  js-sponsor-label">Sponsors</span>
+        </div>
+      </div>
+    </div>    
+  </section>
+  
+  <section class="content-block">
+    <div class="sponsor">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <span>Sponsor</span>
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="business" value="TSDUXTF3FPDGJ">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="Emma's Hope, Inc Christmas Campaign">
+        <input type="hidden" name="item_number" value="christmas-cards">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="number" min="1" max="71" value="1" class="sponsor-amount js-sponsor-amount">
+        <input type="hidden" name="amount" size="102.56" class="js-send-amount">
+        <span class="js-sponsor-families">family</span>
+        <span>for</span>
+        <input type="hidden" name="rm" value="1">
+        <input type="hidden" name="return" value="https://emmashopeinc.org/thankyou.html">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+        <input type="submit" class="button button--small  js-sponsor-total" value="$102.56 this Christmas">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <h2>The Need</h2>
+    <p>The Christmas season is a wonderful time, but it can also bring along with it stress and anxiety, especially for those whose children are actively receiving treatment for cancer and other life-threatening illnesses.</p>
+  </section>
+{% endblock %}
+
+{% block footer_scripts %}
+<script>
+  var NUM_SPONSORS = {{ num_sponsors }};
+  var CUR_TOTAL = {{ donation_total }};
+  var BASE_GIFT = 102.56;
+  
+  var progressMeter         = document.querySelector('.js-progress-meter');
+  var progressPercent       = document.querySelector('.js-percent');
+  var progressRaised        = document.querySelector('.js-raised');
+  var progressDaysLeft      = document.querySelector('.js-days-left');
+  var progressDaysLabel     = document.querySelector('.js-days-label');
+  var progressSponsors      = document.querySelector('.js-sponsors');
+  var progressSponsorLabel  = document.querySelector('.js-sponsor-label');
+  
+  var sponsorAmount         = document.querySelector('.js-sponsor-amount');
+  var sponsorSendAmount     = document.querySelector('.js-send-amount');
+  var sponsorFamilies       = document.querySelector('.js-sponsor-families');
+  var sponsorTotal          = document.querySelector('.js-sponsor-total');
+  
+  sponsorAmount.addEventListener('input', function(event) {
+    sponsorFamilies.innerHTML = (this.value > 1) ? "families" : "family";
+    var amount = (this.value * BASE_GIFT).toFixed(2);
+    sponsorSendAmount.value = amount;
+    sponsorTotal.value = "$" + amount + " this Christmas";
+  });
+</script>
+{% endblock %}

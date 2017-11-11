@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Donate - Give the Gift of Hope | Emma's Hope, Inc</title>
+  <title>Give a Christmas Gift to Parents of Children Undergoing Cancer Treatment | Emma's Hope, Inc</title>
 
   <meta name="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
   <meta name="keywords" content="charity, syracuse, give, help, parents, families, children, new york, life-threatening, illness, cancer, leukemia, childhood cancer, central new york, life-threatening illness, child diagnosed">
@@ -53,7 +53,7 @@
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 </head>
-<body class="site donate">
+<body class="site christmas-cards">
   <header class="site-header  js-site-header" role="header">
   <a class="header-logo" href="/">E</a>
 
@@ -83,48 +83,78 @@
   <main class="site-content" role="content">
     
   <section class="content-block">
-    <h1 class="site-title">Donate</h1>
-    <h2>Give Online with PayPal</h2>
-    <p>Because of your gift today, you're helping us remind parents of children diagnosed with life-threatening illnesses that they are loved and remembered. By strengthening the parents, they are better able to support their children. As parents who have been there - thank you from the bottom of our hearts.</p>
-    <div class="notice">
-      <p><strong>*PLEASE NOTE*<br>2.2% + $0.30 of all donations will be deducted for the PayPal processing fee.</strong> For example, if you gave $50, we would receive $48.60 after the processing fee.</p>
-    </div>
-    
-
-    <div class="donation-buttons">
-      <small>(You don't need a PayPal account to give - all major credit cards are accepted.)</small>
+    <h1 class="site-title">Christmas Cards</h1>
+  </section>
+  
+  <section class="content-block">
+    <div class="progress">
+      <div class="progress-goal"><span class="js-goal">0</span> of 71 families</div>
+      <div class="progress-bar">
+        <div class="progress-meter  js-progress-meter"></div>
+      </div>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <span class="progress-number  js-percent">0%</span>
+          <span class="progress-label">Funded</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-raised">$0</span>
+          <span class="progress-label">Raised</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-days-left">0</span>
+          <span class="progress-label  js-days-label">Days til Christmas</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-number  js-sponsors">0</span>
+          <span class="progress-label  js-sponsor-label">Sponsors</span>
+        </div>
+      </div>
+    </div>    
+  </section>
+  
+  <section class="content-block">
+    <div class="sponsor">
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="L6C9MYBEFRG72">
-        <input type="image" src="/img/paypal-button.svg" border="0" name="submit" alt="Donate to Emma's Hope, Inc. online using PayPal here.">
-        <!-- <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Donate to Emma's Hope, Inc. online using PayPal here."> -->
-        <img alt="" aria-hidden="true" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
+        <span>Sponsor</span>
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="business" value="TSDUXTF3FPDGJ">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="Emma's Hope, Inc Christmas Campaign">
+        <input type="hidden" name="item_number" value="christmas-cards">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="number" min="1" max="71" value="1" class="sponsor-amount js-sponsor-amount">
+        <input type="hidden" name="amount" size="102.56" class="js-send-amount">
+        <span class="js-sponsor-families">family</span>
+        <span>for</span>
+        <input type="hidden" name="rm" value="1">
+        <input type="hidden" name="return" value="https://emmashopeinc.org/thankyou.html">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+        <input type="submit" class="button button--small  js-sponsor-total" value="$102.56 this Christmas">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
     </div>
-    
   </section>
 
   <section class="content-block">
-    <h2>Mail a Check</h2>
-    <p>If you would like to mail a check instead of giving online, please send your gift to the address listed below.</p>
-    <address>
-      Emma's Hope, Inc.<br>
-      PO Box 105<br>
-      Sherrill, NY 13461
-    </address>
-    <p><em>Please make all checks payable to: <strong>Emma's Hope, Inc.</strong></em></p>
+    <h2>The Need</h2>
+    <p>The Christmas season is a wonderful time, but it can also bring along with it stress and anxiety, especially for those whose children are actively receiving treatment for cancer and other life-threatening illnesses.</p>
   </section>
 
   </main>
 
   
-  <section class="cta" role="complementary">
+    <section class="cta" role="complementary">
   <figure class="cta-flower">
     <img aria-hidden="true" src="/img/cta-flower--full.png" alt="small flower separator">
   </figure>
-  <h3>Thank you for partnering with us!</h3>
+  <h3>We Need Your Help</h3>
+  <p class="cta-copy">Help us make a difference in the lives of parents and families who are caring for their precious children as they battle life-threatening illnesses.</p>
+  <a class="cta-button  button button--large" href="/donate.html">Give Now &rarr;</a>
 </section>
-
+  
 
   <footer class="site-footer" role="footer">
   <div class="site-footer__col">
@@ -164,5 +194,31 @@
   </script>
   
   
+<script>
+  var NUM_SPONSORS = 0;
+  var CUR_TOTAL = 0;
+  var BASE_GIFT = 102.56;
+  
+  var progressMeter         = document.querySelector('.js-progress-meter');
+  var progressPercent       = document.querySelector('.js-percent');
+  var progressRaised        = document.querySelector('.js-raised');
+  var progressDaysLeft      = document.querySelector('.js-days-left');
+  var progressDaysLabel     = document.querySelector('.js-days-label');
+  var progressSponsors      = document.querySelector('.js-sponsors');
+  var progressSponsorLabel  = document.querySelector('.js-sponsor-label');
+  
+  var sponsorAmount         = document.querySelector('.js-sponsor-amount');
+  var sponsorSendAmount     = document.querySelector('.js-send-amount');
+  var sponsorFamilies       = document.querySelector('.js-sponsor-families');
+  var sponsorTotal          = document.querySelector('.js-sponsor-total');
+  
+  sponsorAmount.addEventListener('input', function(event) {
+    sponsorFamilies.innerHTML = (this.value > 1) ? "families" : "family";
+    var amount = (this.value * BASE_GIFT).toFixed(2);
+    sponsorSendAmount.value = amount;
+    sponsorTotal.value = "$" + amount + " this Christmas";
+  });
+</script>
+
 
 </body>

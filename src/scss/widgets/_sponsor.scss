@@ -1,0 +1,12 @@
+.sponsor {
+  font-size: 150%;
+  text-align: center;
+  
+  &-amount {
+    padding-left: .5rem;
+    
+    border: 1px solid $xmas-gold;
+    border-radius: 3px;
+    font-size: 100%;
+  }
+}
