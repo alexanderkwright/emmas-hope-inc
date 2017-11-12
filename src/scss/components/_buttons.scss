@@ -1,5 +1,4 @@
-.button,
-input[type="submit"].button {
+.button {
   padding: .5rem 1rem;
 
   display: inline-block;
@@ -11,6 +10,8 @@ input[type="submit"].button {
   font-family: $body-font;
   font-size: 100%;
   text-decoration: none;
+  
+  -webkit-appearance: none;
 
   &--nobg {
     padding: 0;
