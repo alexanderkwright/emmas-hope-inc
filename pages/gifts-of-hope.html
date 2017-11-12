@@ -2,8 +2,8 @@
 
 {% set page_title = "gifts-of-hope" %}
 
-{% set num_sponsors = 0 %}
-{% set donation_total = 0 %}
+{% set num_sponsors = 3 %}
+{% set donation_total = 400 %}
 {% set donation_goal = 7100 %}
 
 {% block site_title %}Give a Christmas Gift of Hope to Parents of Children Undergoing Cancer Treatment | {% endblock %}
@@ -17,17 +17,17 @@
   
   <section class="content-block">
     <div class="progress">
-      <div class="progress-goal"><span class="js-goal">0</span> of 71 families</div>
+      <div class="progress-goal">{{ (donation_goal - (donation_goal - donation_total)) / 100 }} of 71 families sponsored!</div>
       <div class="progress-bar">
-        <div style="width: {{ ((donation_total / donation_goal) * 100) | round(2, floor) }}%;" class="progress-meter  js-progress-meter"></div>
+        <div style="width: {{ ((donation_total / donation_goal) * 100) | round(2, floor) }}%;" class="progress-meter"></div>
       </div>
       <div class="progress-stats">
         <div class="progress-stat">
-          <span class="progress-number  js-percent">{{ ((donation_total / donation_goal) * 100) | round(2, floor) }}%</span>
+          <span class="progress-number">{{ ((donation_total / donation_goal) * 100) | round(2, floor) }}%</span>
           <span class="progress-label">Funded</span>
         </div>
         <div class="progress-stat">
-          <span class="progress-number  js-raised">${{ donation_total }}</span>
+          <span class="progress-number">${{ donation_total }}</span>
           <span class="progress-label">Raised</span>
         </div>
         <div class="progress-stat">
@@ -35,8 +35,8 @@
           <span class="progress-label  js-days-full"><span class="js-days-label">Days</span> til Christmas</span>
         </div>
         <div class="progress-stat">
-          <span class="progress-number  js-sponsors">{{ num_sponsors }}</span>
-          <span class="progress-label  js-sponsor-label">{% if num_sponsors == 1 %}Sponsor {% else %}Sponsors{% endif %}</span>
+          <span class="progress-number">{{ num_sponsors }}</span>
+          <span class="progress-label">{% if num_sponsors == 1 %}Sponsor {% else %}Sponsors{% endif %}</span>
         </div>
       </div>
     </div>    
