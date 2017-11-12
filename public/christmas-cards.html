@@ -20,7 +20,7 @@
   <script>
     WebFontConfig = {
       google: {
-        families: ['Glass+Antiqua', 'Montserrat:400,700']
+        families: ['Glass+Antiqua', 'Montserrat:300,400,700']
       }
     };
 
@@ -103,7 +103,7 @@
         </div>
         <div class="progress-stat">
           <span class="progress-number  js-days-left">0</span>
-          <span class="progress-label  js-days-label">Days til Christmas</span>
+          <span class="progress-label  js-days-full"><span class="js-days-label">Days</span> til Christmas</span>
         </div>
         <div class="progress-stat">
           <span class="progress-number  js-sponsors">0</span>
@@ -204,6 +204,7 @@
   var progressRaised        = document.querySelector('.js-raised');
   var progressDaysLeft      = document.querySelector('.js-days-left');
   var progressDaysLabel     = document.querySelector('.js-days-label');
+  var progressDaysFull      = document.querySelector('.js-days-full');
   var progressSponsors      = document.querySelector('.js-sponsors');
   var progressSponsorLabel  = document.querySelector('.js-sponsor-label');
   
@@ -218,6 +219,54 @@
     sponsorSendAmount.value = amount;
     sponsorTotal.value = "$" + amount + " this Christmas";
   });
+  
+  function updateDays(daysEle, labelEle, labelFull) {
+    var endDate   = new Date('12/25/2017 12:0 AM');
+    var second = 1000;
+    var minute = second * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var timer;
+    
+    function calculateDays() {
+      var today = Date.now();
+      var difference = endDate - today;
+      
+      if (difference < 0) {
+        clearTimeout(timer);
+        daysEle.innerHTML = 'Yahoo!!';
+        labelFull.innerHTML = 'It\'s Christmas!!!!';
+        return;
+      }
+      
+      var days = Math.floor(difference / day);
+      var hours = Math.floor( (difference % day) / hour);
+      var minutes = Math.floor( (difference % hour) / minute);
+      var seconds = Math.floor( (difference % minute) / second);
+      
+      if (days > 0) {
+        // Greater than 1 day
+        daysEle.innerHTML = days;
+        labelEle.innerHTML = (days === 1) ? 'Day' : 'Days';
+      } else if (days < 1 && hours > 0) {
+        // Less than 1 day til Christmas!
+        daysEle.innerHTML = hours;
+        labelEle.innerHTML = (hours === 1) ? 'Hour' : 'Hours';
+      } else if (days < 1 && hours < 1 && minutes > 0) {
+        // Less than 1 hour left til Christmas!
+        daysEle.innerHTML = minutes;
+        labelEle.innerHTML = (minutes === 1) ? 'Minute' : 'Minutes';
+      } else if (days < 1 && hours < 1 && minutes < 1 && seconds > 0) {
+        // Less than 1 minute left til Christmas!
+        daysEle.innerHTML = seconds;
+        labelEle.innerHTML = (seconds === 1) ? 'Second' : 'Seconds';
+      }
+    }
+    
+    timer = setInterval(calculateDays, 1000);
+  }
+  
+  updateDays(progressDaysLeft, progressDaysLabel, progressDaysFull);
 </script>
 
 
