@@ -20,7 +20,6 @@
   }
   
   &-meter {
-    width: 15%;
     height: $progress-height;
     
     float: left;
@@ -30,14 +29,27 @@
   
   &-stats {
     display: flex;
-    flex-basis: row wrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     
     margin-top: 1rem;
   }
   
-    &-number {
-      display: block;
+    &-stat {
+      margin-bottom: 1rem;
+      
+      flex-basis: 100%;
+      text-align: center;
+      
+      @media (min-width: 540px) {
+        margin-bottom: 0;
+        flex-basis: auto;
+        text-align: left;
+      }
     }
+    
+      &-number {
+        display: block;
+      }
 }

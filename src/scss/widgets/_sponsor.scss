@@ -1,6 +1,13 @@
 .sponsor {
-  font-size: 150%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  
+  font-size: 120%;
   text-align: center;
+  
+  @media (min-width: 540px) {
+    font-size: 150%;
+  }
   
   &-amount {
     padding-left: .5rem;
@@ -8,5 +15,24 @@
     border: 1px solid $xmas-gold;
     border-radius: 3px;
     font-size: 100%;
+  }
+  
+  input[type="submit"].button {
+    margin-top: 1rem;
+    
+    @media (min-width: 540px) {
+      margin-top: 0;
+    }
+  }
+  
+  &-helper {
+    max-width: 70ch;
+    margin: 2rem auto 0;
+    
+    font-size: 80%;
+    
+    @media (min-width: 540px) {
+      font-size: 50%;
+    }
   }
 }
