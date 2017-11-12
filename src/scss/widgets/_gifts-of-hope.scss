@@ -1,0 +1,11 @@
+.gifts-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  
+  .progress { order: 2; }
+  .sponsor  { order: 1; }
+  
+  @media (min-width: 540px) {
+    display: block;
+  }
+}
