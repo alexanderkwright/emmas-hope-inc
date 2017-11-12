@@ -85,18 +85,14 @@
 
 {% block footer_scripts %}
 <script>
-  var NUM_SPONSORS = {{ num_sponsors }};
-  var CUR_TOTAL = {{ donation_total }};
-  var BASE_GIFT = 102.56;
+  var PP_PERCENT = 0.022;
+  var PP_FEE = .30;
+  var BASE_GIFT = 100;
+  var AMT_SENT = 0.00;
   
-  var progressMeter         = document.querySelector('.js-progress-meter');
-  var progressPercent       = document.querySelector('.js-percent');
-  var progressRaised        = document.querySelector('.js-raised');
   var progressDaysLeft      = document.querySelector('.js-days-left');
   var progressDaysLabel     = document.querySelector('.js-days-label');
   var progressDaysFull      = document.querySelector('.js-days-full');
-  var progressSponsors      = document.querySelector('.js-sponsors');
-  var progressSponsorLabel  = document.querySelector('.js-sponsor-label');
   
   var sponsorAmount         = document.querySelector('.js-sponsor-amount');
   var sponsorSendAmount     = document.querySelector('.js-send-amount');
@@ -105,9 +101,10 @@
   
   sponsorAmount.addEventListener('input', function(event) {
     sponsorFamilies.innerHTML = (this.value > 1) ? "families" : "family";
-    var amount = (this.value * BASE_GIFT).toFixed(2);
-    sponsorSendAmount.value = amount;
-    sponsorTotal.value = "$" + amount + " this Christmas";
+    AMT_SENT = (this.value * BASE_GIFT);
+    var amount = (AMT_SENT + PP_FEE) / (1 - PP_PERCENT);
+    sponsorSendAmount.value = amount.toFixed(2);
+    sponsorTotal.value = "$" + amount.toFixed(2) + " this Christmas";
   });
   
   function updateDays(daysEle, labelEle, labelFull) {
