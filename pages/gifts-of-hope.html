@@ -52,9 +52,18 @@
         <input type="hidden" name="item_number" value="gifts-of-hope">
         <input type="hidden" name="no_note" value="1">
         <input type="hidden" name="no_shipping" value="1">
-        <input type="number" min="1" max="71" value="1" class="sponsor-amount js-sponsor-amount">
+        <div class="sponsor-button-wrap">
+          <input id="sponsor-1" type="radio" name="sponsor-buttons" value="1" class="js-sponsor-button" checked>
+          <label for="sponsor-1" class="sponsor-button">1 family</label>
+          <input id="sponsor-2" type="radio" name="sponsor-buttons" value="2" class="js-sponsor-button">
+          <label for="sponsor-2" class="sponsor-button">2 families</label>
+          <input id="sponsor-5" type="radio" name="sponsor-buttons" value="5" class="js-sponsor-button">
+          <label for="sponsor-5" class="sponsor-button">5 families</label>
+          <input id="sponsor-10" type="radio" name="sponsor-buttons" value="10" class="js-sponsor-button">
+          <label for="sponsor-10" class="sponsor-button">10 families</label>
+        </div>
+        <!-- <input type="number" min="1" max="71" value="1" class="sponsor-amount js-sponsor-amount"> -->
         <input type="hidden" name="amount" value="102.56" class="js-send-amount">
-        <span class="js-sponsor-families">family</span>
         <span>for</span>
         <input type="hidden" name="rm" value="1">
         <input type="hidden" name="return" value="https://emmashopeinc.org/thank-you.html">
@@ -95,16 +104,25 @@
   var progressDaysFull      = document.querySelector('.js-days-full');
   
   var sponsorAmount         = document.querySelector('.js-sponsor-amount');
+  var sponsorButtons        = document.querySelectorAll('.js-sponsor-button');
   var sponsorSendAmount     = document.querySelector('.js-send-amount');
-  var sponsorFamilies       = document.querySelector('.js-sponsor-families');
   var sponsorTotal          = document.querySelector('.js-sponsor-total');
   
-  sponsorAmount.addEventListener('input', function(event) {
-    sponsorFamilies.innerHTML = (this.value > 1) ? "families" : "family";
-    AMT_SENT = (this.value * BASE_GIFT);
-    var amount = (AMT_SENT + PP_FEE) / (1 - PP_PERCENT);
-    sponsorSendAmount.value = amount.toFixed(2);
-    sponsorTotal.value = "$" + amount.toFixed(2) + " this Christmas";
+  // sponsorAmount.addEventListener('input', function(event) {
+  //   sponsorFamilies.innerHTML = (this.value > 1) ? "families" : "family";
+  //   AMT_SENT = (this.value * BASE_GIFT);
+  //   var amount = (AMT_SENT + PP_FEE) / (1 - PP_PERCENT);
+  //   sponsorSendAmount.value = amount.toFixed(2);
+  //   sponsorTotal.value = "$" + amount.toFixed(2) + " this Christmas";
+  // });
+  
+  Array.prototype.forEach.call(sponsorButtons, function(sponsorButton) {
+    sponsorButton.addEventListener('click', function(event) {
+      AMT_SENT = (this.value * BASE_GIFT);
+      var amount = (AMT_SENT + PP_FEE) / (1 - PP_PERCENT);
+      sponsorSendAmount.value = amount.toFixed(2);
+      sponsorTotal.value = "$" + amount.toFixed(2) + " this Christmas";
+    });
   });
   
   function updateDays(daysEle, labelEle, labelFull) {
