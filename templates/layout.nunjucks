@@ -9,13 +9,15 @@
   <meta itemprop="name" content="Emma's Hope, Inc.">
   <meta itemprop="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
   <meta itemprop="image" content="https://emmashopeinc.org/img/logo@2x.png">
-
+  
+  {% block share_meta %}
   <meta content="https://emmashopeinc.org/img/emma-mission--full.jpg" property="og:image" />
   <meta content="Emma's Hope, Inc." property="og:site_name" />
   <meta content="object" property="og:type" />
   <meta content="emmas-hope-inc" property="og:title" />
-  <meta content="https://emmashopeinc.org/donate/" property="og:url" />
+  <meta content="https://emmashopeinc.org/donate.html" property="og:url" />
   <meta content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children with life-threatening illnesses. 100% of public donations go to supporting these parents." property="og:description" />
+  {% endblock share_meta %}
 
   <script>
     WebFontConfig = {
