@@ -17,6 +17,8 @@
   <meta property="og:description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children with life-threatening illnesses. 100% of public donations go to supporting these parents." />
   <meta property="og:image" content="https://emmashopeinc.org/img/emma-mission--full.jpg" />
   {% endblock share_meta %}
+  
+  <meta name="google-site-verification" content="fdAk1yrHsa9ska_kW0rZwwRoR21z13u2ZBKJ0C-pM-4" />
 
   <script>
     WebFontConfig = {
