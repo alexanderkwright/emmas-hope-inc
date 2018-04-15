@@ -51,3 +51,7 @@ AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css a
 ErrorDocument 404 /404/
 
 RewriteRule (.+)\.html$ /$1/ [L,R]
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
