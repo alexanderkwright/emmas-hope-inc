@@ -10,11 +10,12 @@
     max-width: 120px;
 
     @media (min-width: 840px) {
-      max-width: 185px;
+      max-width: 163px;
     }
   }
 
   figcaption {
+    color: $logo-purple;
     font-family: $header-font;
     font-size: 250%;
   }
