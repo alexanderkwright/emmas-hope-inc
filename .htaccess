@@ -48,6 +48,6 @@ AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css a
 </ifmodule>
 #End Gzip
 
-ErrorDocument 404 /404.html
+ErrorDocument 404 /404/
 
 RewriteRule (.+)\.html$ /$1/ [L,R]
