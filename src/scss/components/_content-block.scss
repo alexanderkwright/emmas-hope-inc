@@ -3,6 +3,8 @@
   margin: 0 auto 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  
+  &.margin-top { margin-top: 4rem; }
 
   @media (min-width: 700px) {
     padding-left: 0;
