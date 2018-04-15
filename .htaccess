@@ -51,3 +51,4 @@ AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css a
 ErrorDocument 404 /404.html
 
 RewriteRule (.+)\.html$ /$1/ [L,R]
+RewriteRule ^gifts-of-hope.html /gifts-of-hope/2018/ [R=301,L]
