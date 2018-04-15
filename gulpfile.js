@@ -157,7 +157,7 @@ gulp.task('jsmin', () => {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', function () {
-  return gulp.src('public/*.html')
+  return gulp.src('public/**/*.html')
     .pipe(critical({base: 'public/', inline: true, minify: true, css: ['public/css/emmashopeinc.css']}))
     .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
     .pipe(gulp.dest('public'));
