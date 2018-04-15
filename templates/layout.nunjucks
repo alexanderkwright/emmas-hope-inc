@@ -11,7 +11,7 @@
   <meta itemprop="image" content="https://emmashopeinc.org/img/logo@2x.png">
   
   {% block share_meta %}
-  <meta property="og:url" content="https://emmashopeinc.org/donate.html" />
+  <meta property="og:url" content="https://emmashopeinc.org/donate/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Giving Hope to Parents of Severly Ill Children" />
   <meta property="og:description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children with life-threatening illnesses. 100% of public donations go to supporting these parents." />
