@@ -1,0 +1,33 @@
+{% extends "layout.nunjucks" %}
+
+{% set page_title = "gifts-of-hope" %}
+
+{% set num_sponsors = 31 %}
+{% set donation_total = 7100 %}
+{% set donation_goal = 7100 %}
+
+{% block site_title %}Give a Christmas Gift of Hope to Parents of Children Undergoing Cancer Treatment | {% endblock %}
+
+{% block share_meta %}
+<meta property="og:url" content="https://emmashopeinc.org/gifts-of-hope/2017/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Thank You For Giving Hope This Christmas!" />
+<meta property="og:description" content="Because of your incredible generosity, all 71 families have been sponsored — in just 20 days!! Your gift is a big deal! Because of you, these families will all receive a $100 gift card to use as they need. You're making our dream a reality, and we cannot thank you enough!" />
+<meta property="og:image" content="https://emmashopeinc.org/img/gifts-of-hope/2017/gifts-of-hope--final2017.jpg" />
+{% endblock share_meta %}
+
+{% block page_class %}gifts-of-hope{% endblock %}
+
+{% block site_content %}
+  <section class="content-block">
+    <h1 class="site-title">Gifts of Hope</h1>
+  </section>
+  
+  <section class="content-block">
+    <h2>Thank You!</h2>
+    <p>Because of your incredible generosity, all 71 families were sponsored — in just 20 days!! Your gift is a big deal! Because of you, these families will all receive a $100 gift card to use as they need.</p>
+    <p>You're making our dream a reality, and we cannot thank you enough!</p>
+    <p>If you're interested in participating in this campaign again, please check out our campaign for 2018 below.</p>
+    <a href="/gifts-of-hope/2018/">View the 2018 Gifts for Hope Campaign &rarr;</a>
+  </section>
+{% endblock %}
