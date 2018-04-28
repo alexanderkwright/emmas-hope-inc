@@ -21,6 +21,11 @@
 
   p {
     margin-left: 0;
+    
+    &.helper {
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+    }
   }
 
   dl div {
