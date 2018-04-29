@@ -1,5 +1,9 @@
+.button-wrap {
+  margin-bottom: 1rem;
+}
 .button,
-input[type="submit"].button {
+input[type="submit"].button,
+button.button {
   padding: .5rem 1rem;
 
   display: inline-block;
@@ -26,5 +30,10 @@ input[type="submit"].button {
 
   &--large {
     padding: 1rem 2rem;
+  }
+  
+  &--gray {
+    background-color: $xmas-gray;
+    color: $black;
   }
 }
