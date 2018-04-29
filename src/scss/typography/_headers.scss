@@ -7,9 +7,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-h1 { font-size: 400%; }
-h2 { font-size: 300%; }
-h3 { font-size: 250%; }
+h1 {
+  font-size: 250%;
+  @media (min-width: 450px) { font-size: 400%; }
+}
+h2 {
+  font-size: 175%;
+  @media (min-width: 450px) { font-size: 300%; }
+}
+h3 {
+  font-size: 150%;
+  @media (min-width: 450px) { font-size: 250%; }
+}
 
 h1, h2, h3 {
   text-align: center;
