@@ -1,0 +1,418 @@
+{% extends "layout.nunjucks" %}
+
+{% set page_title = "events" %}
+
+{% block site_title %}Register for the Emma's Hope 2018 Golf For Hope Charity Golf Tournament | {% endblock %}
+
+{% block page_class %}events{% endblock %}
+
+{% block site_content %}
+  <section class="content-block">
+    <h1 class="site-title">Golf for Hope 2018 Registration</h1>
+    <form id="registration-form" action="" method="GET">
+    
+      <div class="form-field">
+        <h2>Team Information</h2>
+        <div class="form-row">
+          <label for="team_name">Team Name: <span>(required)</span></label>
+          <input id="team_name" type="text" class="js-fields inputs" required>
+        </div>
+      </div>
+      
+      <div class="form-field">
+        <h2>Golfer 1 <span>(Team Captain)</span></h2>
+        <div class="form-row">
+          <label for="golfer_1_first_name">First Name: <span>(required)</span></label>
+          <input id="golfer_1_first_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_1_last_name">Last Name: <span>(required)</span></label>
+          <input id="golfer_1_last_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_1_email">Email Address: <span>(required)</span></label>
+          <input id="golfer_1_email" type="email" class="js-fields inputs" required>
+        </div>
+      </div>
+      
+      <div class="form-field">
+        <h2>Golfer 2</h2>
+        <div class="form-row">
+          <label for="golfer_2_first_name">First Name: <span>(required)</span></label>
+          <input id="golfer_2_first_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_2_last_name">Last Name: <span>(required)</span></label>
+          <input id="golfer_2_last_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_2_email">Email Address:</label>
+          <input id="golfer_2_email" type="email" class="js-fields inputs">
+        </div>
+      </div>
+      
+      <div class="form-field">
+        <h2>Golfer 3</h2>
+        <div class="form-row">
+          <label for="golfer_3_first_name">First Name: <span>(required)</span></label>
+          <input id="golfer_3_first_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_3_last_name">Last Name: <span>(required)</span></label>
+          <input id="golfer_3_last_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_3_email">Email Address:</label>
+          <input id="golfer_3_email" type="email" class="js-fields inputs">
+        </div>
+      </div>
+      
+      <div class="form-field">
+        <h2>Golfer 4</h2>
+        <div class="form-row">
+          <label for="golfer_4_first_name">First Name: <span>(required)</span></label>
+          <input id="golfer_4_first_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_4_last_name">Last Name: <span>(required)</span></label>
+          <input id="golfer_4_last_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="golfer_4_email">Email Address:</label>
+          <input id="golfer_4_email" type="email" class="js-fields inputs">
+        </div>
+      </div>
+      <input class="button" id="submit-form" type="submit" value="Continue to Payment &rarr;">
+      
+    </form>
+    
+    <div id="purchase-form" class="purchase-form is-hidden">
+      <h2 class="text-center">Review Information</h3>
+      <div class="button-wrap text-center">
+        <button class="button button--small button--gray js-edit-info">&larr; Edit Info</button>
+      </div>
+      <div class="form-field review-field">
+        <div class="form-row review-row">
+          <label>Team Name:</label>
+          <input id="review_team_name" type="text" class="js-review readonly" readonly>
+        </div>
+      </div>
+      <div class="form-field review-field">
+        <h3>Golfer 1 (Team Captain):</h3>
+        <div class="form-row review-row">
+          <label>First Name:</label>
+          <input id="review_golfer_1_first_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Last Name:</label>
+          <input id="review_golfer_1_last_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Email:</label>
+          <input id="review_golfer_1_email" type="text" class="js-review readonly" readonly>
+        </div>
+      </div>
+      <div class="form-field review-field">
+        <h3>Golfer 2</h3>
+        <div class="form-row review-row">
+          <label>First Name:</label>
+          <input id="review_golfer_2_first_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Last Name:</label>
+          <input id="review_golfer_2_last_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Email:</label>
+          <input id="review_golfer_2_email" type="text" class="js-review readonly" readonly>
+        </div>
+      </div>
+      <div class="form-field review-field">
+        <h3>Golfer 3</h3>
+        <div class="form-row review-row">
+          <label>First Name:</label>
+          <input id="review_golfer_3_first_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Last Name:</label>
+          <input id="review_golfer_3_last_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Email:</label>
+          <input id="review_golfer_3_email" type="text" class="js-review readonly" readonly>
+        </div>
+      </div>
+      <div class="form-field review-field">
+        <h3>Golfer 4</h3>
+        <div class="form-row review-row">
+          <label>First Name:</label>
+          <input id="review_golfer_4_first_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Last Name:</label>
+          <input id="review_golfer_4_last_name" type="text" class="js-review readonly" readonly>
+        </div>
+        <div class="form-row review-row">
+          <label>Email:</label>
+          <input id="review_golfer_4_email" type="text" class="js-review readonly" readonly>
+        </div>
+      </div>
+      <div class="margin-top text-center">
+        <label for="purchase">Register for $400 Now:</label>
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+    
+  </section>
+  
+  <hr class="separator">
+  
+  <section class="content-block">
+    <h2>Registration Information</h2>
+    <h3>Entry Fees</h3>
+    <p>Foursome Entry &mdash; $400</p>
+    <p>Your entry fee includes 18 holes of golf at Kanon Valley Country Club, greens fees, golf cart, lunch and dinner, 2 raffle tickets, and gift.</p>
+    <h3>Tournament Schedule</h3>
+    <p>10am &mdash; Registration</p>
+    <p>12pm &mdash; Shotgun start</p>
+    <p>Dinner & Awards to follow</p>
+    <h3>Format</h3>
+    <p>Tournament will be played in captain and crew format with four person teams*</p>
+    <p><strong>*NOTE: Teams will be added on a first-come, first-serve basis.</strong></p>
+    <h3>Optional Purchase</h3>
+    <p>Player's Pack &mdash; $50</p>
+    <ul>
+      <li>Two Mulligans</li>
+      <li>Entry to Closest to the Pin contest</li>
+      <li>Entry to "Hit It to Win It" putting contest</li>
+      <li>Entry to Hole in One contest</li>
+    </ul>
+    <h3>Additional Purchase Options</h3>
+    <p class="helper">(Available at the Event)</p>
+    <ul>
+      <li>$20 &mdash; Move your tee shot up 200 yards (Par 5 hole only)</li>
+      <li>$20 &mdash; Entry to Closest to the Pin contest</li>
+      <li>$20 &mdash; Entry to Hole in One contest</li>
+      <li>$10 &mdash; Entry to "Hit It to Win It" putting contest</li>
+      <li>$10 &mdash; Two mulligans</li>
+    </ul>
+    <br>
+    <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
+  </section>
+  
+  <section class="content-block text-center">
+    <h3 class="text-center">Don't forget!</h3>
+    <p>Bring extra cash for raffle prize tickets & the 50/50 charity raffle.</p>
+  </section>
+{% endblock %}
+
+{% block footer_scripts %}
+  <script>
+    const registrationForm = document.getElementById('registration-form');
+    const purchaseForm = document.getElementById('purchase-form');
+    const editButton = document.querySelector('.js-edit-info');
+    const formFields = [].slice.call(document.querySelectorAll('.js-fields'));
+    const reviewFields = [].slice.call(document.querySelectorAll('.js-review'));
+    
+    function scrollIt(destination, duration = 200, easing = 'linear', callback) {
+      const easings = {
+        linear(t) {
+          return t;
+        },
+        easeInQuad(t) {
+          return t * t;
+        },
+        easeOutQuad(t) {
+          return t * (2 - t);
+        },
+        easeInOutQuad(t) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        },
+        easeInCubic(t) {
+          return t * t * t;
+        },
+        easeOutCubic(t) {
+          return (--t) * t * t + 1;
+        },
+        easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        },
+        easeInQuart(t) {
+          return t * t * t * t;
+        },
+        easeOutQuart(t) {
+          return 1 - (--t) * t * t * t;
+        },
+        easeInOutQuart(t) {
+          return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+        },
+        easeInQuint(t) {
+          return t * t * t * t * t;
+        },
+        easeOutQuint(t) {
+          return 1 + (--t) * t * t * t * t;
+        },
+        easeInOutQuint(t) {
+          return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
+        }
+      };
+
+      const start = window.pageYOffset;
+      const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+      const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+      const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+      const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+      if ('requestAnimationFrame' in window === false) {
+        window.scroll(0, destinationOffsetToScroll);
+        if (callback) {
+          callback();
+        }
+        return;
+      }
+
+      function scroll() {
+        const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const time = Math.min(1, ((now - startTime) / duration));
+        const timeFunction = easings[easing](time);
+        window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+
+        if (window.pageYOffset === destinationOffsetToScroll) {
+          if (callback) {
+            callback();
+          }
+          return;
+        }
+
+        requestAnimationFrame(scroll);
+      }
+
+      scroll();
+    }
+    
+    const fillReviewData = function() {
+      formFields.forEach(function(field) {
+        document.getElementById('review_' + field.id).value = field.value;
+      });
+    }
+    
+    registrationForm.addEventListener('submit', function(e) {
+      this.classList.add('is-hidden');
+      fillReviewData();
+      purchaseForm.classList.remove('is-hidden');
+      scrollIt(document.querySelector('#purchase-form'), 300, 'easeOutQuad');
+      e.preventDefault();
+    });
+    
+    editButton.addEventListener('click', function() {
+      purchaseForm.classList.add('is-hidden');
+      registrationForm.classList.remove('is-hidden');
+    });
+  </script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script>
+    const APIData = {
+      'headers': new Headers({
+        'Accept': 'application/json'
+      }),
+      'urls': {
+        'upload': 'https://script.google.com/macros/s/AKfycbwvV6Ccj9DbAUZ2vySUWr9FkwN-4mIBZcoXbX1URtOFSyscoSY/exec'
+      }
+    };
+    
+    const callAPI = async (APIurl, data) => {
+      // Options for the fetch call
+      let fetchOptions = {
+        headers: APIData.headers,
+        method: 'GET'
+      };
+
+      // Make the request to the server and return
+      // the response once the Promise is resolved
+      return (await fetch(APIurl, fetchOptions)).json();
+    }
+    
+    
+    paypal.Button.render({
+        env: 'sandbox', // sandbox | production
+
+        style: {
+          layout: 'vertical',  // horizontal | vertical
+          size:   'large',    // medium | large | responsive
+          shape:  'pill',      // pill | rect
+          color:  'gold'       // gold | blue | silver | black
+        },
+
+        funding: {
+          disallowed: [ paypal.FUNDING.CREDIT ]
+        },
+
+        client: {
+          sandbox:'AWaVhlxaePxWX0eEwAslx0kdyS2Lpu3xHCI2xcQ5vrHhxGcKXowCWWvClBi8UflpLyBRc0tx4KL0amkP',
+          production: 'AYC_WlgGsZDfz3As3hsAugPorx_VIWiP169tdbYRkAAyKJoAD_rOqHPJXtRbdHJkij8nG7dSiLJo2C5l'
+        },
+        
+        commit: true,
+
+        payment: function(data, actions) {
+          return actions.payment.create({
+            payment: {
+              transactions: [
+                {
+                  amount: { total: '400', currency: 'USD' },
+                  description: 'Golf For Hope 2018 Registration'
+                }
+              ],
+              note_to_payer: 'Contact us for any questions on your registration.',
+              redirect_urls: {
+                return_url: 'https://emmashopeinc.org/events/golf-for-hope/2018/thank-you/',
+                cancel_url: 'https://emmashopeinc.org/events/golf-for-hope/2018/cancel/'
+              }
+            }
+          });
+        },
+
+        onAuthorize: function(data, actions) {
+          return actions.payment.execute().then(function() {
+            
+            let formData = {
+              "team_name": document.getElementById('review_team_name').value,
+              "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
+              "date_paid": new Date(Date.now()).toLocaleString().split(',')[0],
+              "golfer_1_first_name": document.getElementById('review_golfer_1_first_name').value,
+              "golfer_1_last_name": document.getElementById('review_golfer_1_last_name').value,
+              "golfer_1_email": document.getElementById('review_golfer_1_email').value,
+              "golfer_2_first_name": document.getElementById('review_golfer_2_first_name').value,
+              "golfer_2_last_name": document.getElementById('review_golfer_2_last_name').value,
+              "golfer_2_email": document.getElementById('review_golfer_2_email').value,
+              "golfer_3_first_name": document.getElementById('review_golfer_3_first_name').value,
+              "golfer_3_last_name": document.getElementById('review_golfer_3_last_name').value,
+              "golfer_3_email": document.getElementById('review_golfer_3_email').value,
+              "golfer_4_first_name": document.getElementById('review_golfer_4_first_name').value,
+              "golfer_4_last_name": document.getElementById('review_golfer_4_last_name').value,
+              "golfer_4_email": document.getElementById('review_golfer_4_email').value
+            };
+            newData = JSON.stringify(formData);
+            newData = newData.replace(/{"/g, "?");
+            newData = newData.replace(/":"/g, "=");
+            newData = newData.replace(/","/g, "&");
+            newData = newData.replace(/"}/g, "");
+            
+            callAPI(APIData.urls.upload + newData, formData)
+              .then((uploadResponse) => {
+                if (uploadResponse.result === 'success') {
+                  return actions.redirect();
+                }
+            });
+          });
+        },
+        
+        onError: function(err) {
+          console.log(err);
+        }
+
+    }, '#paypal-button-container');
+  </script>
+{% endblock %}
