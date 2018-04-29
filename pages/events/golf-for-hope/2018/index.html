@@ -129,8 +129,8 @@
     directionsDisplay.setPanel(dirPanel);
 
     var control = document.getElementById('floating-panel');
-    control.style.display = 'block';
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+    control.style.display = 'block';
 
     var onClickHandler = function() {
       if (start.value !== '') {
@@ -138,10 +138,6 @@
       }
     };
     document.getElementById('getDirections').addEventListener('click', onClickHandler);
-
-    // Add a style-selector control to the map.
-    var styleControl = document.getElementById('style-selector-control');
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
 
     // Set the map's style to the initial value of the selector.
     map.setOptions({styles: styles['retro']});
