@@ -2,6 +2,6 @@
 .mobile-menu {
   
   @media (min-width: 940px) {
-    display: none;
+    display: none !important;
   }
 }
