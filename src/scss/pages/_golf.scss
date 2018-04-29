@@ -1,0 +1,49 @@
+#floating-panel {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  
+  padding: 5px 5px 5px 10px;
+  
+  background-color: #fff;
+  border: 1px solid #999;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  text-align: center;
+  
+  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+  z-index: 5;
+}
+
+#right-panel {
+  display: none;
+  position: absolute;
+  top: 0 !important; right: 0;
+  margin-right: 50px;
+  
+  padding-left: 10px;
+  width: 310px;
+  height: 100%;
+  
+  background: #fff;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  overflow: auto;
+  
+  select,
+  input {
+    font-size: 15px;
+  }
+  
+  select { width: 100%; }
+  i { font-size: 12px; }
+}
+
+#map {
+  height: 400px;
+  
+  @media (min-width: 1400px) {
+    height: 500px;
+  }
+}
