@@ -1,3 +1,17 @@
 .text-center {
-  text-align: center;
+  text-align: center !important;
+}
+
+.is-hidden {
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: .2s ease;
+}
+
+.separator {
+  margin-bottom: 2rem;
+  height: 1px;
+  background: $xmas-gray;
+  border: 0;
 }
