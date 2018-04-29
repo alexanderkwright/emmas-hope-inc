@@ -15,8 +15,12 @@
     max-width: 70ch;
   }
 
-  h2 {
+  h2, h3 {
     text-align: left;
+  }
+  
+  h3 {
+    margin-top: 3rem;
   }
 
   p {
