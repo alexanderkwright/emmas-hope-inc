@@ -24,6 +24,10 @@
     @media (min-width: 980px) {
       padding: 4rem;
     }
+    
+    p {
+      max-width: 45ch;
+    }
   }
   
   &-left.sans {
