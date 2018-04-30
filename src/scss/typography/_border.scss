@@ -1,0 +1,16 @@
+.border {
+  &-top     { border-top: 1px solid darken($xmas-gray, 10%); }
+  &-right   { border-right: 1px solid darken($xmas-gray, 10%); }
+  &-bottom  { border-bottom: 1px solid darken($xmas-gray, 10%); }
+  &-left    { border-left: 1px solid darken($xmas-gray, 10%); }
+  
+  &-vertical {
+    border: 1px solid darken($xmas-gray, 10%);
+    border-width: 1px 0;
+  }
+  
+  &-horizontal {
+    border: 1px solid darken($xmas-gray, 10%);
+    border-width: 0 1px;
+  }
+}
