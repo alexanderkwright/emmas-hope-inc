@@ -1,4 +1,4 @@
-{% extends "layout.nunjucks" %}
+{% extends "landing.nunjucks" %}
 
 {% set page_title = "events" %}
 
@@ -15,8 +15,16 @@
 {% block page_class %}landing events{% endblock %}
 
 {% block site_content %}
+  <section class="hero">
+    <img class="hero-image" src="/img/golf-for-hope/2018/kanon-valley6.jpg" alt="Man playing golf at sunset.">
+    <div class="hero-content text-center">
+      <span>First Annual</span>
+      <h1>Golf for Hope Tournament</h1>
+      <p>July 9, 2018 &mdash; Kanon Valley Country Club</p>
+    </div>
+  </section>
+  
   <section class="content-block">
-    <h1 class="site-title">Golf for Hope 2018 Registration</h1>
     <form id="registration-form" action="" method="GET">
     
       <div class="form-field">
