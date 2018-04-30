@@ -1,0 +1,14 @@
+.landing {
+  h1 { font-family: $body-font; }
+  h2, h3, p {
+    font-family: $script;
+  }
+  
+  @media (min-width: 940px) {
+    .site-header {
+      position: absolute;
+      top: 0; bottom: auto;
+      width: 100%;
+    }
+  }
+}
