@@ -1,9 +1,11 @@
 <header class="site-header  js-site-header" role="header">
-  <a class="header-logo" href="/">E</a>
-
-  <a class="mobile-donate button" href="/donate/">Donate</a>
-
-  {% include 'partials/nav.nunjucks' %}
-
-  <button class="mobile-menu button button--nobg  js-mobile-menu" aria-label="Mobile Menu">Menu</button>
+  <a class="header-logo" href="/">
+    <img width="150" src="/img/site-logo_color_horizontal.svg" alt="E logo">
+  </a>
+  <div class="header-links">
+    <a class="nav-logo" href="/">E</a>
+    <a class="mobile-donate button" href="/donate/">Donate</a>
+    {% include 'partials/nav.nunjucks' %}
+    <button class="mobile-menu button button--nobg  js-mobile-menu" aria-label="Mobile Menu">Menu</button>
+  </div>
 </header>
