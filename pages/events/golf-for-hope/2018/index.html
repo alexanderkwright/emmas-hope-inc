@@ -1,4 +1,4 @@
-{% extends "layout.nunjucks" %}
+{% extends "landing.nunjucks" %}
 
 {% set page_title = "events" %}
 
@@ -12,62 +12,70 @@
 <meta property="og:image" content="https://emmashopeinc.org/img/golf-for-hope/2018/golf-for-hope-2018.jpg" />
 {% endblock share_meta %}
 
-{% block page_class %}events{% endblock %}
+{% block page_class %}landing events{% endblock %}
+
+{% block cta %}{% endblock %}
 
 {% block site_content %}
-  <section class="content-block">
-    <h1 class="site-title">Golf for Hope - 2018</h1>
-    <h2>Entry Fees</h2>
-    <p>Foursome Entry &mdash; $400</p>
-    <p>Your entry fee includes 18 holes of golf at Kanon Valley Country Club, greens fees, golf cart, lunch and dinner, 2 raffle tickets, and gift.</p>
+  <section class="hero">
+    <img class="hero-image" src="/img/golf-for-hope/2018/kanon-valley6.jpg" alt="Man playing golf at sunset.">
+    <div class="hero-content text-center">
+      <span>First Annual</span>
+      <h1>Golf for Hope Tournament</h1>
+      <p>July 9, 2018 &mdash; Kanon Valley Country Club</p>
+    </div>
   </section>
   
-  <section class="content-block">
-    <h2>Tournament Schedule</h2>
-    <p>10am &mdash; Registration</p>
-    <p>12pm &mdash; Shotgun start</p>
-    <p>Dinner & Awards to follow</p>
+  <section class="content-block margin-top padding-vertical text-center">
+    <p class="lead">100% of the money raised at this tournament goes to the families we are here to serve.</p>
+    <p>Emma's Hope is made entirely possible by individuals & corporations like you.</p>
   </section>
   
-  <section class="content-block">
-    <h2>Format</h2>
-    <p>Tournament will be played in captain and crew format with four person teams*</p>
-    <p><strong>*NOTE: Teams will be added on a first-come, first-serve basis.</strong></p>
+  <section class="info-block margin-top">
+    <div class="info-block-left text-center bg--purple sans">
+      <h3>Tournament Schedule</h3>
+      <p><strong>10am</strong><br>Registration, lunch provided</p>
+      <p><strong>12pm</strong><br>Shotgun &mdash; Captain and Crew</p>
+      <p><strong>5pm</strong><br>Dinner & Awards to follow</p>
+    </div>
+    <div class="info-block-right text-center">
+      <h3>Tournament Registration</h3>
+      <p>To register four golfers, play as an individual, or to purchase dinner tickets, please register below using our online form.</p>
+      <a class="button" href="/events/golf-for-hope/2018/register/">Register Now &rarr;</a>
+    </div>
   </section>
   
-  <section class="content-block">
-    <h2>Optional Purchase</h2>
-    <p>Player's Pack &mdash; $50</p>
-    <ul>
-      <li>Two Mulligans</li>
-      <li>Entry to Closest to the Pin contest</li>
-      <li>Entry to "Hit It to Win It" putting contest</li>
-      <li>Entry to Hole in One contest</li>
-    </ul>
+  <section class="content-block margin-top padding-vertical">
+    <p>Don't forget to bring extra cash for raffle prize tickets, the 50/50 charity raffle, and extra purchases!</p>
   </section>
   
-  <section class="content-block">
-    <h2>Additional Purchase Options</h2>
-    <p class="helper">(Available at the Event)</p>
-    <ul>
-      <li>$20 &mdash; Move your tee shot up 200 yards (Par 5 hole only)</li>
-      <li>$20 &mdash; Entry to Closest to the Pin contest</li>
-      <li>$20 &mdash; Entry to Hole in One contest</li>
-      <li>$10 &mdash; Entry to "Hit It to Win It" putting contest</li>
-      <li>$10 &mdash; Two mulligans</li>
-    </ul>
+  <section class="info-block bg--gray margin-top">
+    <div class="info-block-left text-center">
+      <h3>Optional Purchase</h3>
+      <p>Player's Pack &mdash; $50</p>
+      <ul class="text-left">
+        <li>Two Mulligans</li>
+        <li>Entry to Closest to the Pin contest</li>
+        <li>Entry to "Hit It to Win It" putting contest</li>
+        <li>Entry to Hole in One contest</li>
+      </ul>
+    </div>
+    <div class="info-block-right text-center border-left">
+      <h3>Additional Purchase Options</h3>
+      <p class="helper">(Available at the Event)</p>
+      <ul class="text-left">
+        <li>$20 &mdash; Move your tee shot up 200 yards (Par 5 hole only)</li>
+        <li>$20 &mdash; Entry to Closest to the Pin contest</li>
+        <li>$20 &mdash; Entry to Hole in One contest</li>
+        <li>$10 &mdash; Entry to "Hit It to Win It" putting contest</li>
+        <li>$10 &mdash; Two mulligans</li>
+      </ul>
+    </div>
   </section>
   
-  <section class="content-block">
+  <section class="content-block padding-vertical text-center">
     <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
-  </section>
-  
-  <section class="content-block text-center">
-    <h3 class="text-center">Don't forget!</h3>
-    <p>Bring extra cash for raffle prize tickets & the 50/50 charity raffle.</p>
-  </section>
-  
-  <section class="content-block text-center">
+    <br>
     <a class="button button--large" href="/events/golf-for-hope/2018/register/">Register Now &rarr;</a>
   </section>
   
