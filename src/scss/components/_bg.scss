@@ -1,0 +1,21 @@
+.bg {
+  &--pink {
+    background: $pink;
+    color: $white;
+  }
+  
+  &--purple {
+    background: $logo-purple;
+    color: $white;
+  }
+  
+  &--gray {
+    background: $xmas-gray;
+    color: $black;
+  }
+  
+  &--gold {
+    background: $gold;
+    color: $black;
+  }
+}
