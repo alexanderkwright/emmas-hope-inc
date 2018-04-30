@@ -1,0 +1,36 @@
+.info-block {
+  display: flex;
+  flex-flow: row wrap;
+  
+  &-left,
+  &-right {
+    flex: 0 0 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 4rem;
+  }
+  
+  &-left.sans {
+    h3 {
+      font-size: 125%;
+      font-weight: 700;
+    }
+    
+    p {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+  }
+  
+  &-left {
+    h3 { font-size: 200%; }
+  }
+  
+  &-right {
+    h3 { font-size: 200%; }
+    p { margin-bottom: 2rem; }
+  }
+}
