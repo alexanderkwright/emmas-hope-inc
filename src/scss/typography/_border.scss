@@ -13,4 +13,11 @@
     border: 1px solid darken($xmas-gray, 10%);
     border-width: 0 1px;
   }
+  
+  &-top--mobile {
+    @media (max-width: 739px) {
+      border: 1px solid darken($xmas-gray, 10%);
+      border-width: 1px 0 0 0;
+    }
+  }
 }
