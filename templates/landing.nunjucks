@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{% block site_title %}{% endblock %}Emma's Hope, Inc</title>
+
+  <meta name="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
+  <meta name="keywords" content="charity, syracuse, give, help, parents, families, children, new york, life-threatening, illness, cancer, leukemia, childhood cancer, central new york, life-threatening illness, child diagnosed">
+  <meta itemprop="name" content="Emma's Hope, Inc.">
+  <meta itemprop="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
+  <meta itemprop="image" content="https://emmashopeinc.org/img/logo@2x.png">
+  
+  {% block share_meta %}
+  <meta property="og:url" content="https://emmashopeinc.org/donate/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Giving Hope to Parents of Severly Ill Children" />
+  <meta property="og:description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children with life-threatening illnesses. 100% of public donations go to supporting these parents." />
+  <meta property="og:image" content="https://emmashopeinc.org/img/emma-mission--full.jpg" />
+  {% endblock share_meta %}
+  
+  <meta name="google-site-verification" content="fdAk1yrHsa9ska_kW0rZwwRoR21z13u2ZBKJ0C-pM-4" />
+
+  <script>
+    WebFontConfig = {
+      google: {
+        families: ['Montserrat:300,400,700', 'Esteban']
+      }
+    };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+    '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+    !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+    loadCSS("/css/emmashopeinc.css");
+  </script>
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107267913-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107267913-1');
+  </script>
+
+
+  <link rel="mask-icon" href="/pinned-e.svg" color="#000000">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+</head>
+<body class="site {% block page_class %}{% endblock %}">
+  {% include "partials/landing/header.nunjucks" %}
+
+  <main class="site-content" role="content">
+    {% block site_content %}{% endblock %}
+  </main>
+
+  {% block cta %}
+    {% include "partials/cta.nunjucks" %}
+  {% endblock %}
+
+  {% include "partials/footer.nunjucks" %}
+
+  <script>
+    var headerEl = document.querySelector('.js-site-header');
+    var mobileTrigger = document.querySelector('.js-mobile-menu');
+
+    function toggleMobileMenu(e) {
+      headerEl.classList.toggle('has-openMenu');
+      e.target.innerHTML = (e.target.innerHTML === 'Menu') ? 'Close' : 'Menu';
+    }
+
+    mobileTrigger.addEventListener('click', toggleMobileMenu, false);
+  </script>
+  
+  {% block footer_scripts %}{% endblock %}
+
+</body>
