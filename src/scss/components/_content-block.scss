@@ -5,6 +5,10 @@
   padding-right: 2rem;
   
   &.margin-top { margin-top: 4rem; }
+  
+  .landing & {
+    max-width: 80ch;
+  }
 
   @media (min-width: 700px) {
     padding-left: 0;
@@ -12,7 +16,11 @@
   }
 
   @media (min-width: 1400px) {
-    max-width: 70ch;
+    max-width: 80ch;
+  }
+  
+  @media (min-width: 1650px) {
+    max-width: 90ch;
   }
 
   h2, h3 {
@@ -25,6 +33,11 @@
 
   p {
     margin-left: 0;
+    
+    &.lead {
+      margin-bottom: 1rem;
+      font-size: 200%;
+    }
     
     &.helper {
       margin-top: -1rem;
