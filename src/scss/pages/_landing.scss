@@ -4,6 +4,12 @@
     font-family: $script;
   }
   
+  @media (min-width: 840px) {
+    .site-footer__col h3 {
+      font-size: 180%;
+    }
+  }
+  
   @media (min-width: 940px) {
     .site-header {
       position: absolute;
