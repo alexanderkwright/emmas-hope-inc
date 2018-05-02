@@ -1,4 +1,4 @@
-{% extends "landing.nunjucks" %}
+{% extends "layout.nunjucks" %}
 
 {% set page_title = "events" %}
 
@@ -14,95 +14,111 @@
 
 {% block page_class %}landing events{% endblock %}
 
+{% block cta %}{% endblock %}
+
 {% block site_content %}
-  <section class="hero">
-    <img class="hero-image" src="/img/golf-for-hope/2018/kanon-valley6.jpg" alt="Man playing golf at sunset.">
-    <div class="hero-content text-center">
-      <span>First Annual</span>
-      <h1>Golf for Hope Tournament</h1>
-      <p>July 9, 2018 &mdash; Kanon Valley Country Club</p>
-    </div>
+  
+  <section class="content-block margin-top padding-vertical text-center no-margin-bottom">
+    <h2 class="text-center">Tournament Registration</h2>
+    <p>July 9, 2018 &mdash; <a class="nolink" href="https://maps.google.com/?saddr=Current+Location&daddr=43.140974664881824,-75.70847315000003&driving" target="_blank">Kanon Valley Country Club</a></p>
+    <p>Rather register by mail & check?<br><a href="/events/golf-for-hope/2018/registration-form.pdf">Download the Registration Form</a></p>
   </section>
   
+  <div class="callout text-center margin-bottom no-margin-top">
+    <p class="sans spaced upper"><strong>Registration ends June 30th, 2018</strong></p>
+  </div>
+  
   <section class="content-block">
-    <form id="registration-form" action="" method="GET">
+    <div class="text-center">
+      <h3 class="sans text-center">Who's Golfing?</h3>
+      
+      <div class="golfer-choices">
+        <input id="golfer_foursome" value="foursome" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_foursome" class="golfer-choice">
+          A team of four <span class="price">$400</span>
+          <p>Includes golf, cart, boxed lunch, dinner for four.</p>
+        </label>
+        
+        <input id="golfer_single" value="single" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_single" class="golfer-choice">
+          I'm golfing solo <span class="price">$100</span>
+          <p>Includes golf, cart, boxed lunch, dinner for one.</p>
+        </label>
+        
+        <input id="golfer_dinner" value="dinner" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_dinner" class="golfer-choice">
+          Dinner only, please <span class="price">$50</span>
+          <p>Includes dinner for you.</p>
+        </label>
+      </div>
+      
+      <p class="js-price is-hidden sans">Total cost today: <span class="js-total"></span></p>
+      <input id="hidden-price" type="hidden" name="total-price">
+    </div>
     
-      <div class="form-field">
-        <h2>Team Information</h2>
-        <div class="form-row">
-          <label for="team_name">Team Name: <span>(required)</span></label>
-          <input id="team_name" type="text" class="js-fields inputs" required>
+    <form id="registration-form" action="" method="GET" class="is-hidden">     
+      <div id="golfer-foursome">
+        <div class="form-field">
+          <div class="form-row">
+            <label for="team_name">Team Name: <span>(required)</span></label>
+            <input id="team_name" type="text" class="js-fields inputs" required>
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 1 <span>(Team Captain)</span></h2>
+          <div class="form-row">
+            <label for="golfer_1_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_1_name" type="text" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_1_email">Email: <span>(required)</span></label>
+            <input id="golfer_1_email" type="email" class="js-fields inputs" required>
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 2</h2>
+          <div class="form-row">
+            <label for="golfer_2_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_2_name" type="text" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_2_email">Email:</label>
+            <input id="golfer_2_email" type="email" class="js-fields inputs">
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 3</h2>
+          <div class="form-row">
+            <label for="golfer_3_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_3_name" type="text" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_3_email">Email:</label>
+            <input id="golfer_3_email" type="email" class="js-fields inputs">
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 4</h2>
+          <div class="form-row">
+            <label for="golfer_4_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_4_name" type="text" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_4_email">Email:</label>
+            <input id="golfer_4_email" type="email" class="js-fields inputs">
+          </div>
         </div>
       </div>
       
-      <div class="form-field">
-        <h2>Golfer 1 <span>(Team Captain)</span></h2>
-        <div class="form-row">
-          <label for="golfer_1_first_name">First Name: <span>(required)</span></label>
-          <input id="golfer_1_first_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_1_last_name">Last Name: <span>(required)</span></label>
-          <input id="golfer_1_last_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_1_email">Email Address: <span>(required)</span></label>
-          <input id="golfer_1_email" type="email" class="js-fields inputs" required>
-        </div>
-      </div>
-      
-      <div class="form-field">
-        <h2>Golfer 2</h2>
-        <div class="form-row">
-          <label for="golfer_2_first_name">First Name: <span>(required)</span></label>
-          <input id="golfer_2_first_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_2_last_name">Last Name: <span>(required)</span></label>
-          <input id="golfer_2_last_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_2_email">Email Address:</label>
-          <input id="golfer_2_email" type="email" class="js-fields inputs">
-        </div>
-      </div>
-      
-      <div class="form-field">
-        <h2>Golfer 3</h2>
-        <div class="form-row">
-          <label for="golfer_3_first_name">First Name: <span>(required)</span></label>
-          <input id="golfer_3_first_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_3_last_name">Last Name: <span>(required)</span></label>
-          <input id="golfer_3_last_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_3_email">Email Address:</label>
-          <input id="golfer_3_email" type="email" class="js-fields inputs">
-        </div>
-      </div>
-      
-      <div class="form-field">
-        <h2>Golfer 4</h2>
-        <div class="form-row">
-          <label for="golfer_4_first_name">First Name: <span>(required)</span></label>
-          <input id="golfer_4_first_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_4_last_name">Last Name: <span>(required)</span></label>
-          <input id="golfer_4_last_name" type="text" class="js-fields inputs" required>
-        </div>
-        <div class="form-row">
-          <label for="golfer_4_email">Email Address:</label>
-          <input id="golfer_4_email" type="email" class="js-fields inputs">
-        </div>
-      </div>
-      <input class="button" id="submit-form" type="submit" value="Continue to Payment &rarr;">
+      <input class="button button--large" id="submit-form" type="submit" value="Continue to Payment &rarr;">
       
     </form>
     
-    <div id="purchase-form" class="purchase-form is-hidden">
+    <div id="review-form" class="purchase-form is-hidden">
       <h2 class="text-center">Review Information</h3>
       <div class="button-wrap text-center">
         <button class="button button--small button--gray js-edit-info">&larr; Edit Info</button>
@@ -114,14 +130,10 @@
         </div>
       </div>
       <div class="form-field review-field">
-        <h3>Golfer 1 (Team Captain):</h3>
+        <h3>Golfer 1 <span>(Team Captain)</span></h3>
         <div class="form-row review-row">
-          <label>First Name:</label>
-          <input id="review_golfer_1_first_name" type="text" class="js-review readonly" readonly>
-        </div>
-        <div class="form-row review-row">
-          <label>Last Name:</label>
-          <input id="review_golfer_1_last_name" type="text" class="js-review readonly" readonly>
+          <label>Full Name:</label>
+          <input id="review_golfer_1_name" type="text" class="js-review readonly" readonly>
         </div>
         <div class="form-row review-row">
           <label>Email:</label>
@@ -131,12 +143,8 @@
       <div class="form-field review-field">
         <h3>Golfer 2</h3>
         <div class="form-row review-row">
-          <label>First Name:</label>
-          <input id="review_golfer_2_first_name" type="text" class="js-review readonly" readonly>
-        </div>
-        <div class="form-row review-row">
-          <label>Last Name:</label>
-          <input id="review_golfer_2_last_name" type="text" class="js-review readonly" readonly>
+          <label>Full Name:</label>
+          <input id="review_golfer_2_name" type="text" class="js-review readonly" readonly>
         </div>
         <div class="form-row review-row">
           <label>Email:</label>
@@ -146,12 +154,8 @@
       <div class="form-field review-field">
         <h3>Golfer 3</h3>
         <div class="form-row review-row">
-          <label>First Name:</label>
-          <input id="review_golfer_3_first_name" type="text" class="js-review readonly" readonly>
-        </div>
-        <div class="form-row review-row">
-          <label>Last Name:</label>
-          <input id="review_golfer_3_last_name" type="text" class="js-review readonly" readonly>
+          <label>Full Name:</label>
+          <input id="review_golfer_3_name" type="text" class="js-review readonly" readonly>
         </div>
         <div class="form-row review-row">
           <label>Email:</label>
@@ -161,74 +165,85 @@
       <div class="form-field review-field">
         <h3>Golfer 4</h3>
         <div class="form-row review-row">
-          <label>First Name:</label>
-          <input id="review_golfer_4_first_name" type="text" class="js-review readonly" readonly>
-        </div>
-        <div class="form-row review-row">
-          <label>Last Name:</label>
-          <input id="review_golfer_4_last_name" type="text" class="js-review readonly" readonly>
+          <label>Full Name:</label>
+          <input id="review_golfer_4_name" type="text" class="js-review readonly" readonly>
         </div>
         <div class="form-row review-row">
           <label>Email:</label>
           <input id="review_golfer_4_email" type="text" class="js-review readonly" readonly>
         </div>
       </div>
-      <div class="margin-top text-center">
-        <label for="purchase">Register for $400 Now:</label>
-        <div id="paypal-button-container"></div>
+    </div>
+    
+    <form id="golfer-single" action="./" method="GET" class="is-hidden">
+      <div class="form-field padding-vertical">
+        <h2>Your Information</h2>
+        <div class="form-row">
+          <label for="single_name">Full Name: <span>(required)</span></label>
+          <input id="single_name" type="text" class="inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="single_email">Email: <span>(required)</span></label>
+          <input id="single_email" type="email" class="inputs" required>
+        </div>
       </div>
+      <div class="text-center">
+        <input class="button button--large" type="submit" value="Continue to Payment &rarr;">
+      </div>
+    </form>
+    
+    <div id="purchase-button" class="margin-top text-center is-hidden">
+      <div id="paypal-button-container"></div>
     </div>
     
   </section>
-  
-  <hr class="separator">
-  
-  <section class="content-block">
-    <h2>Registration Information</h2>
-    <h3>Entry Fees</h3>
-    <p>Foursome Entry &mdash; $400</p>
-    <p>Your entry fee includes 18 holes of golf at Kanon Valley Country Club, greens fees, golf cart, lunch and dinner, 2 raffle tickets, and gift.</p>
-    <h3>Tournament Schedule</h3>
-    <p>10am &mdash; Registration</p>
-    <p>12pm &mdash; Shotgun start</p>
-    <p>Dinner & Awards to follow</p>
-    <h3>Format</h3>
-    <p>Tournament will be played in captain and crew format with four person teams*</p>
-    <p><strong>*NOTE: Teams will be added on a first-come, first-serve basis.</strong></p>
-    <h3>Optional Purchase</h3>
-    <p>Player's Pack &mdash; $50</p>
-    <ul>
-      <li>Two Mulligans</li>
-      <li>Entry to Closest to the Pin contest</li>
-      <li>Entry to "Hit It to Win It" putting contest</li>
-      <li>Entry to Hole in One contest</li>
-    </ul>
-    <h3>Additional Purchase Options</h3>
-    <p class="helper">(Available at the Event)</p>
-    <ul>
-      <li>$20 &mdash; Move your tee shot up 200 yards (Par 5 hole only)</li>
-      <li>$20 &mdash; Entry to Closest to the Pin contest</li>
-      <li>$20 &mdash; Entry to Hole in One contest</li>
-      <li>$10 &mdash; Entry to "Hit It to Win It" putting contest</li>
-      <li>$10 &mdash; Two mulligans</li>
-    </ul>
-    <br>
-    <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
+  <section class="content-block text-center">
+    <p>Don't forget to bring extra cash for raffle prize tickets, the 50/50 charity raffle, and extra purchases!</p>
   </section>
   
-  <section class="content-block text-center">
-    <h3 class="text-center">Don't forget!</h3>
-    <p>Bring extra cash for raffle prize tickets & the 50/50 charity raffle.</p>
+  <section class="info-block bg--gray margin-top">
+    <div class="info-block-left text-center">
+      <h3>Player's Pack Add-on</h3>
+      <p>(Purchase for $50 at the Event)</p>
+      <ul class="text-left">
+        <li>Two Mulligans</li>
+        <li>Entry to Closest to the Pin contest</li>
+        <li>Entry to "Hit It to Win It" putting contest</li>
+        <li>Entry to Hole in One contest</li>
+      </ul>
+    </div>
+    <div class="info-block-right text-center border-left border-top--mobile">
+      <h3>Individual Add-ons</h3>
+      <p>(Purchase individually at the Event)</p>
+      <ul class="text-left">
+        <li>$25 &mdash; Entry to Closest to the Pin contest</li>
+        <li>$25 &mdash; Entry to Hole in One contest</li>
+        <li>$10 &mdash; Entry to "Hit It to Win It" putting contest</li>
+        <li>$10 &mdash; Two mulligans</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="content-block padding-vertical text-center">
+    <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
   </section>
 {% endblock %}
 
 {% block footer_scripts %}
   <script>
     const registrationForm = document.getElementById('registration-form');
-    const purchaseForm = document.getElementById('purchase-form');
+    const reviewForm = document.getElementById('review-form');
+    const purchaseButton = document.getElementById('purchase-button');
     const editButton = document.querySelector('.js-edit-info');
     const formFields = [].slice.call(document.querySelectorAll('.js-fields'));
     const reviewFields = [].slice.call(document.querySelectorAll('.js-review'));
+    const priceField = document.querySelector('.js-price');
+    const priceTotal = document.querySelector('.js-total');
+    const hiddenPrice = document.getElementById('hidden-price');
+    const singleForm = document.getElementById('golfer-single');
+    const golferButtons = [].slice.call(document.querySelectorAll('.golfer-radio'));
+    
+    let registrationType = '';
     
     function scrollIt(destination, duration = 200, easing = 'linear', callback) {
       const easings = {
@@ -315,20 +330,51 @@
     }
     
     registrationForm.addEventListener('submit', function(e) {
+      e.preventDefault();
       this.classList.add('is-hidden');
       fillReviewData();
-      purchaseForm.classList.remove('is-hidden');
-      scrollIt(document.querySelector('#purchase-form'), 300, 'easeOutQuad');
-      e.preventDefault();
+      reviewForm.classList.remove('is-hidden');
+      purchaseButton.classList.remove('is-hidden');
+      scrollIt(document.querySelector('#review-form'), 300, 'easeOutQuad');
     });
     
     editButton.addEventListener('click', function() {
-      purchaseForm.classList.add('is-hidden');
+      reviewForm.classList.add('is-hidden');
+      singleForm.classList.add('is-hidden');
+      purchaseButton.classList.add('is-hidden');
       registrationForm.classList.remove('is-hidden');
     });
+    
+    golferButtons.forEach(function(button) {
+      button.addEventListener('change', function() {
+        priceField.classList.remove('is-hidden');
+        let val = this.value;
+        if (val === 'foursome') {
+          registrationForm.classList.remove('is-hidden');
+          singleForm.classList.add('is-hidden');
+          purchaseButton.classList.add('is-hidden');
+          priceTotal.innerHTML = '$400';
+          hiddenPrice.value = 400;
+          registrationType = 'foursome'
+        } else {
+          registrationForm.classList.add('is-hidden');
+          singleForm.classList.remove('is-hidden');
+          priceTotal.innerHTML = (val === 'single') ? '$100' : '$50';
+          hiddenPrice.value = (val === 'single') ? 100 : 50;
+          registrationType = (val === 'single') ? 'single' : 'dinner';
+        }
+      });
+      
+      singleForm.addEventListener('submit', function(e) {
+        this.querySelector('input[type="submit"]').parentNode.classList.add('is-hidden');
+        purchaseButton.classList.remove('is-hidden');
+        e.preventDefault();
+      });
+    });
+    
   </script>
   <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-  <script>
+  <script>    
     const APIData = {
       'headers': new Headers({
         'Accept': 'application/json'
@@ -377,7 +423,7 @@
             payment: {
               transactions: [
                 {
-                  amount: { total: '400', currency: 'USD' },
+                  amount: { total: hiddenPrice.value, currency: 'USD' },
                   description: 'Golf For Hope 2018 Registration'
                 }
               ],
@@ -396,18 +442,17 @@
             let formData = {
               "team_name": document.getElementById('review_team_name').value,
               "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
+              "registration_type": registrationType,
               "date_paid": new Date(Date.now()).toLocaleString().split(',')[0],
-              "golfer_1_first_name": document.getElementById('review_golfer_1_first_name').value,
-              "golfer_1_last_name": document.getElementById('review_golfer_1_last_name').value,
+              "single_name": document.getElementById('single_name').value,
+              "single_email": document.getElementById('single_email').value,
+              "golfer_1_name": document.getElementById('review_golfer_1_name').value,
               "golfer_1_email": document.getElementById('review_golfer_1_email').value,
-              "golfer_2_first_name": document.getElementById('review_golfer_2_first_name').value,
-              "golfer_2_last_name": document.getElementById('review_golfer_2_last_name').value,
+              "golfer_2_name": document.getElementById('review_golfer_2_name').value,
               "golfer_2_email": document.getElementById('review_golfer_2_email').value,
-              "golfer_3_first_name": document.getElementById('review_golfer_3_first_name').value,
-              "golfer_3_last_name": document.getElementById('review_golfer_3_last_name').value,
+              "golfer_3_name": document.getElementById('review_golfer_3_name').value,
               "golfer_3_email": document.getElementById('review_golfer_3_email').value,
-              "golfer_4_first_name": document.getElementById('review_golfer_4_first_name').value,
-              "golfer_4_last_name": document.getElementById('review_golfer_4_last_name').value,
+              "golfer_4_name": document.getElementById('review_golfer_4_name').value,
               "golfer_4_email": document.getElementById('review_golfer_4_email').value
             };
             newData = JSON.stringify(formData);
