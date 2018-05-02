@@ -176,7 +176,8 @@
     </div>
     
     <form id="golfer-single" action="./" method="GET" class="is-hidden">
-      <div class="form-field padding-vertical">
+      <p id="solo-info" class="text-center is-hidden">We're happy to add you to a team of four for the tournament.</p>
+      <div class="form-field padding-bottom">
         <h2>Your Information</h2>
         <div class="form-row">
           <label for="single_name">Full Name: <span>(required)</span></label>
@@ -241,6 +242,7 @@
     const priceTotal = document.querySelector('.js-total');
     const hiddenPrice = document.getElementById('hidden-price');
     const singleForm = document.getElementById('golfer-single');
+    const singleInfo = document.getElementById('solo-info');
     const golferButtons = [].slice.call(document.querySelectorAll('.golfer-radio'));
     
     let registrationType = '';
@@ -348,6 +350,7 @@
     golferButtons.forEach(function(button) {
       button.addEventListener('change', function() {
         priceField.classList.remove('is-hidden');
+        singleInfo.classList.add('is-hidden');
         let val = this.value;
         if (val === 'foursome') {
           registrationForm.classList.remove('is-hidden');
@@ -359,6 +362,9 @@
         } else {
           registrationForm.classList.add('is-hidden');
           singleForm.classList.remove('is-hidden');
+          if (val === 'single') {
+            singleInfo.classList.remove('is-hidden');
+          }
           priceTotal.innerHTML = (val === 'single') ? '$100' : '$50';
           hiddenPrice.value = (val === 'single') ? 100 : 50;
           registrationType = (val === 'single') ? 'single' : 'dinner';
@@ -402,7 +408,7 @@
 
         style: {
           layout: 'vertical',  // horizontal | vertical
-          size:   'large',    // medium | large | responsive
+          size:   'responsive',    // medium | large | responsive
           shape:  'pill',      // pill | rect
           color:  'gold'       // gold | blue | silver | black
         },
