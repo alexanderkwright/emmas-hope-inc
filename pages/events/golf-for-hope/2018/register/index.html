@@ -52,11 +52,11 @@
         </label>
       </div>
       
-      <p class="js-price is-hidden sans">Total cost today: <span class="js-total"></span></p>
+      <p class="js-price sans" style="display: none;">Total cost today: <span class="js-total"></span></p>
       <input id="hidden-price" type="hidden" name="total-price">
     </div>
     
-    <form id="registration-form" action="" method="GET" class="is-hidden">     
+    <form id="registration-form" action="" method="GET" style="display: none;">     
       <div id="golfer-foursome">
         <div class="form-field">
           <div class="form-row">
@@ -118,7 +118,7 @@
       
     </form>
     
-    <div id="review-form" class="purchase-form is-hidden">
+    <div id="review-form" class="purchase-form" style="display: none;">
       <h2 class="text-center">Review Information</h3>
       <div class="button-wrap text-center">
         <button class="button button--small button--gray js-edit-info">&larr; Edit Info</button>
@@ -175,8 +175,8 @@
       </div>
     </div>
     
-    <form id="golfer-single" action="./" method="GET" class="is-hidden">
-      <p id="solo-info" class="text-center is-hidden">We're happy to add you to a team of four for the tournament.</p>
+    <form id="golfer-single" action="./" method="GET" style="display: none;">
+      <p id="solo-info" class="text-center" style="display: none;">We're happy to add you to a team of four for the tournament.</p>
       <div class="form-field padding-bottom">
         <h2>Your Information</h2>
         <div class="form-row">
@@ -193,7 +193,7 @@
       </div>
     </form>
     
-    <div id="purchase-button" class="margin-top text-center is-hidden">
+    <div id="purchase-button" class="margin-top text-center" style="display:none;">
       <div id="paypal-button-container"></div>
     </div>
     
@@ -331,39 +331,56 @@
       });
     }
     
+    const showHideEles = function(show = true, ...eles) {
+      eles.forEach(function(ele) {
+        ele.style.display = (show) ? 'block' : 'none';
+      });
+    }
+    
     registrationForm.addEventListener('submit', function(e) {
       e.preventDefault();
       this.classList.add('is-hidden');
       fillReviewData();
-      reviewForm.classList.remove('is-hidden');
-      purchaseButton.classList.remove('is-hidden');
+      showHideEles(true, reviewForm);
+      showHideEles(false, purchaseButton);
+      //reviewForm.classList.remove('is-hidden');
+      //purchaseButton.style.display = 'block';
       scrollIt(document.querySelector('#review-form'), 300, 'easeOutQuad');
     });
     
     editButton.addEventListener('click', function() {
-      reviewForm.classList.add('is-hidden');
-      singleForm.classList.add('is-hidden');
-      purchaseButton.classList.add('is-hidden');
-      registrationForm.classList.remove('is-hidden');
+      showHideEles(false, reviewForm, singleForm, purchaseButton);
+      showHideEles(true, registrationForm);
+      //reviewForm.classList.add('is-hidden');
+      //singleForm.classList.add('is-hidden');
+      //purchaseButton.classList.add('is-hidden');
+      //registrationForm.classList.remove('is-hidden');
     });
     
     golferButtons.forEach(function(button) {
       button.addEventListener('change', function() {
-        priceField.classList.remove('is-hidden');
-        singleInfo.classList.add('is-hidden');
+        showHideEles(true, priceField);
+        showHideEles(false, singleInfo);
+        //priceField.classList.remove('is-hidden');
+        //singleInfo.classList.add('is-hidden');
         let val = this.value;
         if (val === 'foursome') {
-          registrationForm.classList.remove('is-hidden');
-          singleForm.classList.add('is-hidden');
-          purchaseButton.classList.add('is-hidden');
+          showHideEles(true, registrationForm);
+          //registrationForm.classList.remove('is-hidden');
+          showHideEles(false, singleForm, purchaseButton);
+          //singleForm.classList.add('is-hidden');
+          //purchaseButton.classList.add('is-hidden');
           priceTotal.innerHTML = '$400';
           hiddenPrice.value = 400;
           registrationType = 'foursome'
         } else {
-          registrationForm.classList.add('is-hidden');
-          singleForm.classList.remove('is-hidden');
+          showHideEles(false, registrationForm);
+          showHideEles(true, singleForm);
+          //registrationForm.classList.add('is-hidden');
+          //singleForm.classList.remove('is-hidden');
           if (val === 'single') {
-            singleInfo.classList.remove('is-hidden');
+            showHideEles(true, singleInfo);
+            //singleInfo.classList.remove('is-hidden');
           }
           priceTotal.innerHTML = (val === 'single') ? '$100' : '$50';
           hiddenPrice.value = (val === 'single') ? 100 : 50;
@@ -372,8 +389,10 @@
       });
       
       singleForm.addEventListener('submit', function(e) {
-        this.querySelector('input[type="submit"]').parentNode.classList.add('is-hidden');
-        purchaseButton.classList.remove('is-hidden');
+        showHideEles(false, this.querySelector('input[type="submit"]').parentNode);
+        //this.querySelector('input[type="submit"]').parentNode.classList.add('is-hidden');
+        showHideEles(true, purchaseButton);
+        //purchaseButton.classList.remove('is-hidden');
         e.preventDefault();
       });
     });
