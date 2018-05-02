@@ -1,0 +1,69 @@
+.golfer-choices {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  
+  margin-top: 2rem;
+}
+  .golfer-radio { display: none; }
+  
+  .golfer-choice {
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    min-width: 284px;
+    
+    background: $xmas-gray;
+    border: 1px solid darken($xmas-gray, 10%);
+    border-radius: 6px;
+    cursor: pointer;
+    
+    transition: .2s ease;
+    
+    @media (min-width: 620px) {
+      min-width: initial;
+    }
+    
+    &:nth-of-type(2) {
+      @media (min-width: 620px) {
+        margin-right: 1rem;
+      }
+      
+      @media (min-width: 640px) {
+        margin-left: 1rem;
+      }
+      
+      @media (min-width: 850px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
+    
+    .price {
+      display: block;
+      font-size: 85%;
+    }
+    
+    p {
+      margin: .5rem 0 0;
+      font-size: 65%;
+    }
+    
+    @media (min-width: 940px) {
+      &:hover {
+        background: white;
+        box-shadow: 0 3px 10px rgba(0,0,0,.05);
+        transform: translateY(-1px);
+      }
+      &:active {
+        box-shadow: 0 -1px 2px rgba(0,0,0,.2);
+        transform: translateY(1px);
+      }
+    }
+  }
+  
+  .golfer-radio:checked + .golfer-choice {
+    background: $pink;
+    border-color: $pink;
+    color: white;
+  }
