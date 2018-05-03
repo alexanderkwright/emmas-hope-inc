@@ -9,15 +9,19 @@
   .golfer-radio { display: none; }
   
   .golfer-choice {
+    flex: 1 0 100%;
+    max-width: 500px;
     margin-bottom: 1rem;
     padding: 1rem 2rem;
     min-width: 284px;
+    position: relative;
+    border-left: 2px solid $gold;
+    box-shadow: 0 1px 20px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.05);
     
-    background: $xmas-gray;
-    border: 1px solid darken($xmas-gray, 10%);
-    border-radius: 6px;
     cursor: pointer;
+    font-size: 130%;
     
+    text-transform: capitalize;
     transition: .2s ease;
     
     @media (min-width: 620px) {
@@ -40,23 +44,26 @@
     }
     
     .price {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
       display: block;
-      font-size: 85%;
+      font-size: 70%;
     }
     
     p {
       margin: .5rem 0 0;
       font-size: 65%;
+      text-transform: initial;
     }
     
     @media (min-width: 940px) {
       &:hover {
-        background: white;
+        background: $gold-light;
         box-shadow: 0 3px 10px rgba(0,0,0,.05);
-        transform: translateY(-1px);
+        transform: translateY(-2px);
       }
       &:active {
-        box-shadow: 0 -1px 2px rgba(0,0,0,.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 1px 4px rgba(0,0,0,.2);
         transform: translateY(1px);
       }
     }

@@ -2,9 +2,9 @@
   display: flex;
   flex-flow: row wrap;
   
+  &-full,
   &-left,
   &-right {
-    flex: 0 0 100%;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -12,21 +12,25 @@
     
     padding: 2rem 1rem;
     
-    @media (min-width: 450px) {
-      padding: 2rem;
-    }
-    
-    @media (min-width: 740px) {
-      flex: 0 0 50%;
-      padding: 4rem 2rem;
-    }
-    
-    @media (min-width: 980px) {
-      padding: 4rem;
-    }
+    @media (min-width: 450px) { padding: 2rem; }
+    @media (min-width: 740px) { padding: 4rem 2rem; }
+    @media (min-width: 980px) { padding: 4rem; }
     
     p {
       max-width: 45ch;
+    }
+  }
+  
+  &-full {
+    flex: 1 0 auto;
+  }
+  
+  &-left,
+  &-right {
+    flex: 0 0 100%;
+    
+    @media (min-width: 740px) {
+      flex: 0 0 50%;
     }
   }
   
