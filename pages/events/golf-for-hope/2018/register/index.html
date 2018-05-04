@@ -270,7 +270,7 @@
     const updateInfo = function(ele) {
       let amount = (parseFloat(ele.dataset.price) + PP_FEE) / (1 - PP_PERCENT);
       priceTotal.innerHTML = '$' + amount.toFixed(2);
-      hiddenPrice.value = amount;
+      hiddenPrice.value = amount.toFixed(2);
       registrationType = ele.value;
     }
     
