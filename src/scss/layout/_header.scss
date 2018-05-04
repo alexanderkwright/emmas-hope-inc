@@ -39,6 +39,12 @@
       flex: 0 0 auto;
     }
     
+    img {      
+      @media (min-width: 1200px) {
+        max-height: initial !important;
+      }
+    }
+    
     .home & {
       display: none;
     }
