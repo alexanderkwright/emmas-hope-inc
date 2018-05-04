@@ -333,20 +333,34 @@
       }
     }
     
+    function listener(arr, add, evt, fn) {
+      arr.forEach(function(item) {
+        if (add) {
+          item.addEventListener(evt, fn, false);
+        } else {
+          item.removeEventListener(evt, fn, false);
+        }
+      });
+    }
+    
     function onBlurFields(handler) {
+      let formFields = [].slice.call(registrationForm.querySelectorAll('.inputs'));
+      let singleFields = [].slice.call(singleForm.querySelectorAll('.inputs'));
+      
+      // TODO
+      // Remove validity on hidden fields
+      // Try: reset form, set novalidate to true
       switch (registrationType) {
         case 'foursome':
-          let formFields = [].slice.call(registrationForm.querySelectorAll('input'));
-          formFields.forEach(function(field) {
-            field.addEventListener('blur', handler);
-          });
+          singleForm.reset();
+          listener(singleFields, false, 'blur', handler);
+          listener(formFields, true, 'blur', handler);
           break;
         case 'single':
         case 'dinner':
-          let singleFields = [].slice.call(singleForm.querySelectorAll('input'));
-          singleFields.forEach(function(single) {
-            single.addEventListener('blur', handler);
-          });
+          registrationForm.reset();
+          listener(formFields, false, 'blur', handler);
+          listener(singleFields, true, 'blur', handler);
           break;
       }
     }
@@ -369,7 +383,7 @@
     
     function renderPayPalButton() {
       paypal.Button.render({
-        env: 'production', // sandbox | production
+        env: 'sandbox', // sandbox | production
 
         style: {
           layout: 'vertical',  // horizontal | vertical
