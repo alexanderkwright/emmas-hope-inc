@@ -1,6 +1,6 @@
 <header class="site-header  js-site-header" role="header">
   <a class="header-logo" href="/">
-    <img width="150" src="/img/site-logo_white_horizontal.svg" alt="E logo">
+    <img width="150" style="max-height: 42px" src="/img/site-logo_white_horizontal_stacked.svg" alt="E logo">
   </a>
   <div class="header-links">
     <a class="nav-logo" href="/">E</a>
