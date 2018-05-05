@@ -10,6 +10,14 @@
 .no-margin {
   &-top {
     margin-top: 0 !important;
+    
+    &-mobile {
+      margin-top: 0 !important;
+      
+      @media (min-width: 880px) {
+        margin-top: 3rem !important;
+      }
+    }
   }
   &-bottom {
     margin-bottom: 0 !important;
