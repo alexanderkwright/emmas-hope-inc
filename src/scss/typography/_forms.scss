@@ -97,3 +97,9 @@
     }
   }
 }
+
+.register-form {
+  &.is-hidden {
+    display: none;
+  }
+}
