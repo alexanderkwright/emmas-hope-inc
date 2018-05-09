@@ -25,10 +25,6 @@
     background-color: transparent;
     border-top-width: 0;
     box-shadow: none;
-    
-    .home & {
-      justify-content: flex-end;
-    }
   }
 }
   .header-logo {
@@ -43,10 +39,6 @@
       @media (min-width: 1200px) {
         max-height: initial !important;
       }
-    }
-    
-    .home & {
-      display: none;
     }
   }
   .header-links {
