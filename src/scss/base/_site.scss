@@ -1,14 +1,5 @@
 .site {
   margin: 0;
-    
-  &.home {
-    background: url('../img/header-flowers--full@2x.jpg') left top no-repeat;
-    background-size: 30%;
-    
-    @media (min-width: 940px) {
-      background-size: 333px 354px;
-    }
-  }
 
   &-title {
     margin-top: 0;
