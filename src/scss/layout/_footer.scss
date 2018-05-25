@@ -68,8 +68,12 @@
       text-align: center;
     }
 
-    span:first-child {
+    span {
       display: block;
+      
+      a {
+        color: inherit;
+      }
     }
   }
 }
