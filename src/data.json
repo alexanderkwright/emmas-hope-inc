@@ -17,12 +17,8 @@
       "name": "Events"
     },
     {
-      "slug": "contact",
-      "name": "Contact"
-    },
-    {
       "slug": "donate",
-      "name": "Donate"
+      "name": "Donate Now"
     }
   ]
 }

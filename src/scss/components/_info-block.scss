@@ -2,6 +2,10 @@
   display: flex;
   flex-flow: row wrap;
   
+  &.hero-content {
+    max-width: 100ch;
+  }
+  
   &-full,
   &-left,
   &-right {
@@ -54,4 +58,8 @@
     h3 { font-size: 200%; }
     a { margin-top: 2rem; }
   }
+}
+
+.align-left {
+  align-items: flex-start;
 }

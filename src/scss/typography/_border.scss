@@ -1,23 +1,26 @@
 .border {
-  &-top     { border-top: 1px solid darken($xmas-gray, 10%); }
-  &-right   { border-right: 1px solid darken($xmas-gray, 10%); }
-  &-bottom  { border-bottom: 1px solid darken($xmas-gray, 10%); }
-  &-left    { border-left: 1px solid darken($xmas-gray, 10%); }
+  $border-color: $xmas-gray;
+  $border-width: 1px;
+  
+  &-top     { border-top: $border-width solid $border-color; }
+  &-right   { border-right: $border-width solid $border-color; }
+  &-bottom  { border-bottom: $border-width solid $border-color; }
+  &-left    { border-left: $border-width solid $border-color; }
   
   &-vertical {
-    border: 1px solid darken($xmas-gray, 10%);
-    border-width: 1px 0;
+    border: $border-width solid $border-color;
+    border-width: $border-width 0;
   }
   
   &-horizontal {
-    border: 1px solid darken($xmas-gray, 10%);
-    border-width: 0 1px;
+    border: $border-width solid $border-color;
+    border-width: 0 $border-width;
   }
   
   &-top--mobile {
     @media (max-width: 739px) {
-      border: 1px solid darken($xmas-gray, 10%);
-      border-width: 1px 0 0 0;
+      border: $border-width solid $border-color;
+      border-width: $border-width 0 0 0;
     }
   }
 }

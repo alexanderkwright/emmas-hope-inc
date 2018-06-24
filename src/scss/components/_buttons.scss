@@ -23,6 +23,11 @@ button.button {
     background-color: transparent;
     color: $black;
   }
+  
+  &--tiny {
+    padding: .125rem .75rem;
+    font-size: 85%;
+  }
 
   &--small {
     padding: .3rem .75rem;
@@ -38,6 +43,11 @@ button.button {
   
   &--gray {
     background-color: $xmas-gray;
+    color: $black;
+  }
+  
+  &--white {
+    background-color: $white;
     color: $black;
   }
 }

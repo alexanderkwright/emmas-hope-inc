@@ -1,14 +1,18 @@
 .promotion {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
   
-  background: $xmas-gray;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  
+  background: linear-gradient(to right, $logo-purple, $pink);
   text-align: center;
   
-  img {
-    max-width: 1000px;
-    width: 100%;
-    display: block;
-    margin: 1rem auto 2rem;
+  p {
+    margin: 0 1rem 0;
+    color: $white;
+    font-size: 85%;
   }
 }

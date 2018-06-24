@@ -1,5 +1,6 @@
 .text-center { text-align: center !important; }
 .text-left { text-align: left !important; }
+.uppercase { text-transform: uppercase; }
 
 .is-hidden {
   max-height: 0;
@@ -7,6 +8,8 @@
   pointer-events: none;
   transition: .2s ease;
 }
+
+.script { font-family: $script; }
 
 .separator {
   margin-top: 1rem;
@@ -24,5 +27,11 @@
     margin-bottom: 1rem;
     
     &:last-of-type { margin-bottom: 0; }
+  }
+}
+
+.big-list {
+  li {
+    font-size: 120%;
   }
 }
