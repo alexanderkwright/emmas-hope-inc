@@ -9,6 +9,12 @@
   transition: .2s ease;
 }
 
+.maxw {
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .script { font-family: $script; }
 
 .separator {

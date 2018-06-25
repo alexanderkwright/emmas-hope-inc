@@ -1,4 +1,19 @@
 .padding {
+  
+  &-top {
+    padding-top: 1.5rem;
+    
+    @media (min-width: 740px) { padding-top: 3rem; }
+    @media (min-width: 1000px) { padding-top: 5rem; }
+  }
+  
+  &-bottom {
+    padding-bottom: 1.5rem;
+    
+    @media (min-width: 740px) { padding-bottom: 3rem; }
+    @media (min-width: 1000px) { padding-bottom: 5rem; }
+  }
+  
   &-vertical {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
