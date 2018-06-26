@@ -57,7 +57,9 @@
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 </head>
 <body class="site {% block page_class %}{% endblock %}">
-  {% include "partials/promotion.nunjucks" %}
+  {% block promotions %}
+    {% include "partials/promotion.nunjucks" %}
+  {% endblock %}
   {% include "partials/header.nunjucks" %}
 
   <main class="site-content" role="content">

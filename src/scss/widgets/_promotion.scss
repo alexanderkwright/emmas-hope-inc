@@ -15,4 +15,8 @@
     color: $white;
     font-size: 85%;
   }
+  
+  .no-promo & {
+    display: none;
+  }
 }
