@@ -1,9 +1,9 @@
 .site-footer {
   margin-bottom: 3rem;
-  padding-bottom: 8rem;
+  padding-bottom: 1rem;
 
-  background: url('../img/footer-flowers--full@2x.jpg') bottom right no-repeat;
-  background-size: 40%;
+  // background: url('../img/footer-flowers--full@2x.jpg') bottom right no-repeat;
+  // background-size: 40%;
 
   @media (min-width: 840px) {
     display: flex;
@@ -11,35 +11,23 @@
     justify-content: space-around;
 
     margin-bottom: 0;
-    padding: 3rem 2rem 0;
 
-    background-size: 350px;
+    // background-size: 350px;
   }
-
-  @media (min-width: 1400px) { padding-top: 3rem; }
-  @media (min-width: 1700px) { padding-top: 5rem; }
-  @media (min-width: 2000px) { padding-top: 6.5rem; }
 
   &__col {
     margin-bottom: 4rem;
     text-align: center;
 
     @media (min-width: 840px) {
-      flex: 0 0 calc(100% / 3);
-
-      text-align: left;
+      flex: 1 0 calc(100% / 3);
 
       h3 {
-        text-align: left;
         
         @media (min-width: 840px) {
           font-size: 180%;
         }
       }
-    }
-
-    @media (min-width: 1400px) {
-      max-width: 250px;
     }
 
     a {
@@ -64,12 +52,7 @@
 
     @media (min-width: 840px) {
       flex-basis: 100%;
-      text-align: left;
       margin-left: 0;
-    }
-
-    @media (min-width: 1400px) {
-      text-align: center;
     }
 
     span {

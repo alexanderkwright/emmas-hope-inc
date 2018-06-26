@@ -18,12 +18,8 @@
       width: 100%;
     }
     
-    &-light::after {
-      background: rgba($black, .25);
-    }
-    
     &-dark::after {
-      background: rgba($black, .4);
+      background: rgba($blue-dark, .5);
     }
     
     &-white::after {
