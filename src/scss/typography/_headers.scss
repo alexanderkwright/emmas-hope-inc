@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 250%;
-  @media (min-width: 450px) { font-size: 400%; }
+  @media (min-width: 450px) { font-size: 350%; }
   
   &.smaller {
     font-size: 125%;
@@ -18,11 +18,11 @@ h1 {
 }
 h2 {
   font-size: 175%;
-  @media (min-width: 450px) { font-size: 300%; }
+  @media (min-width: 450px) { font-size: 250%; }
 }
 h3 {
   font-size: 150%;
-  @media (min-width: 450px) { font-size: 250%; }
+  @media (min-width: 450px) { font-size: 225%; }
   
   &.smaller {
     font-size: 100%;
