@@ -5,7 +5,13 @@
   justify-content: center;
   
   &-item {
-    flex: 1;
+    flex: 1 0 50%;
+    margin-bottom: 1rem;
+    
+    @media (min-width: 980px) {
+      flex: 1;
+      margin-bottom: 0;
+    }
     
     .grid--3 & {
       flex: 1 1 calc(100% / 3);

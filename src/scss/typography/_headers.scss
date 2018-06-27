@@ -1,10 +1,17 @@
 h1, h2, h3, h4, h5, h6 {
   margin-top: .25rem;
   margin-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   font-family: $header-font;
   font-weight: normal;
   line-height: 1.2;
+  
+  @media (min-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 h1 {

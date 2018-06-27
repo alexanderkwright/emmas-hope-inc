@@ -2,23 +2,41 @@
 
 {% block site_title %}Donate - Give the Gift of Hope | {% endblock %}
 
-{% block page_class %}donate{% endblock %}
+{% block page_class %}no-promo donate{% endblock %}
 
 {% block site_content %}
   <section class="content-block text-center">
-    <h1 class="site-title">Donate Online with PayPal</h2>
-    <p>Thank you for showing parents whose children are fighting for their lives that they are loved and never without hope. By strengthening the parents, you are helping their children.</p>
-    
+    <h1 class="site-title">Donate Online with PayPal</h2>    
 
-    <div class="donation-buttons">
-      <!-- TODO: ADD CUSTOM DESIGNATION AND HIDDEN ATTRS. -->
+    <div class="donation-buttons margin-bottom--big">      
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
+        <div class="margin-bottom">
+          <label for="donation-designation">
+            Where would you like the money to go?<br>
+            <select id="donation-designation" class="designation">
+              <option value="general">General Fund</option>
+              <option value="mom-boxes">Mom Boxes</option>
+              <option value="financial">Financial Help</option>
+              <option value="bereavement">Bereavement Help</option>
+            </select>
+          </label>
+        </div>
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="image_url" value="https://www.emmashopeinc.org/img/emmas-hope-logo-150.png">
+        <input type="hidden" name="business" value="TSDUXTF3FPDGJ">
+        <input type="hidden" name="lc" value="US">
+        <input id="js-designation" type="hidden" name="item_name" value="General Fund">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="hidden" name="rm" value="1">
+        <input type="hidden" name="return" value="https://emmashopeinc.org/thank-you/">
+        <input type="hidden" name="currency_code" value="USD">
         <input type="hidden" name="hosted_button_id" value="L6C9MYBEFRG72">
         <input type="image" src="/img/paypal-button.svg" border="0" name="submit" alt="Donate to Emma's Hope, Inc. online using PayPal here.">
-        <img alt="" aria-hidden="true" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </form>
     </div>
+    
+    <p>Thank you for showing parents whose children are fighting for their lives that they are loved and never without hope. By strengthening the parents, you are helping their children.</p>
     
     <!-- <div class="notice">
       <p><strong>*PLEASE NOTE*<br>2.2% + $0.30 of all donations are deducted as a PayPal processing fee.</strong> For example, if you gave $100, we would receive $97.50.</p>
@@ -40,4 +58,15 @@
 
 {% block cta %}
   {% include "partials/cta-donate.nunjucks" %}
+{% endblock %}
+
+{% block footer_scripts %}
+  <script>
+    var designationSelect = document.getElementById('donation-designation');
+    var designationValue  = document.getElementById('js-designation');
+    
+    designationSelect.addEventListener('change', function() {
+      designationValue.value = this.options[this.selectedIndex].text;
+    }, false);
+  </script>
 {% endblock %}
