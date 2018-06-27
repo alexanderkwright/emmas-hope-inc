@@ -64,9 +64,50 @@
   <script>
     var designationSelect = document.getElementById('donation-designation');
     var designationValue  = document.getElementById('js-designation');
+    var designationObj    = {
+      'general': 'General Fund',
+      'mom-boxes': 'Mom Boxes',
+      'financial': 'Financial Help',
+      'bereavement': 'Bereavement Help' };
     
     designationSelect.addEventListener('change', function() {
       designationValue.value = this.options[this.selectedIndex].text;
     }, false);
+    
+    function urlHasDesignation() {
+      return window.location.search.indexOf('designation');
+    }
+    
+    function getURLParams() {
+      var path = window.location.search.replace(/\+/g, ' '),
+          params = {},
+          tokens,
+          re = /[?&]?([^=]+)=([^&]*)/g;
+      
+      while (tokens = re.exec(path)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+      }
+      
+      return params;
+    }
+    
+    // Does the page have a URL designation parameter?
+    if (urlHasDesignation()) {
+      // Yes - now get all Params
+      var params = getURLParams();
+      // If the desgination param exists
+      if (params.designation) {
+        // If the value matches one in the obj
+        if (designationObj[params.designation] !== undefined) {
+          // Set the select and hidden input value to match
+          for (var i = 0; i < designationSelect.options.length; i++) {
+            if (designationSelect.options[i].value === params.designation) {
+              designationSelect.options.selectedIndex = i;
+              designationValue.value = designationObj[params.designation];
+            }
+          }
+        }
+      }
+    }
   </script>
 {% endblock %}
