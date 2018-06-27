@@ -1,8 +1,8 @@
 .content-block {
   max-width: 60ch;
-  margin: 0 auto 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin: 0 auto 3.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   
   &.margin-top { margin-top: 2rem; }
   
@@ -30,6 +30,8 @@
   }
 
   h2, h3 {
+    padding-left: 0;
+    padding-right: 0;
     text-align: left;
   }
   
