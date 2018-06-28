@@ -25,5 +25,13 @@
   }
   &-bottom {
     margin-bottom: 0 !important;
+    
+    &-mobile {
+      margin-bottom: 0 !important;
+      
+      @media (min-width: 880px) {
+        margin-bottom: 2rem !important;
+      }
+    }
   }
 }
