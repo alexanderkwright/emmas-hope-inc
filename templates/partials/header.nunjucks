@@ -3,7 +3,9 @@
     <img width="150" style="max-height: 42px" src="/img/site-logo_color_horizontal_stacked.svg" alt="E logo">
   </a>
   <div class="header-links">
-    <a class="nav-logo" href="/">E</a>
+    <a class="nav-logo" href="/">
+      <img width="24" style="max-height: 24px" src="/img/logo.svg" alt="E logo">
+    </a>
     <a class="mobile-donate button" href="/donate/">Donate</a>
     {% include 'partials/nav.nunjucks' %}
     <button class="mobile-menu button button--nobg  js-mobile-menu" aria-label="Mobile Menu">Menu</button>
