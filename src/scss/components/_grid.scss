@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   
+  .auction & {
+    &:first-of-type {
+      margin-bottom: 6rem;
+    }
+  }
+  
   &-item {
     flex: 1 0 100%;
     margin-bottom: 1rem;
@@ -13,6 +19,14 @@
       margin-bottom: 0;
     }
     
+    .auction & {
+      .helper-text {
+        display: block;
+        max-width: 16ch;
+        margin: 1rem auto 0;
+      }
+    }
+    
     .grid--3 & {
       flex: 1 1 calc(100% / 3);
     }
@@ -20,6 +34,10 @@
     img {
       max-height: 90px;
       max-width: 250px;
+      
+      .auction & {
+        max-height: 200px;
+      }
     }
     
     img.sponsor {
