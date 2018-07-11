@@ -1,0 +1,307 @@
+{% extends "landing.nunjucks" %}
+
+{% set page_title = "events" %}
+
+{% block site_title %}2019 Golf For Hope Charity Golf Tournament | {% endblock %}
+
+{% block share_meta %}
+<meta property="og:url" content="https://emmashopeinc.org/events/golf-for-hope/2019/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Second Annual Golf for Hope Charity Golf Tournament" />
+<meta property="og:description" content="Join us on the fairway for a day of food and fun, as we raise money for families whose children are diagnosed with life-threatening illnesses or cancers." />
+<meta property="og:image" content="https://emmashopeinc.org/img/golf-for-hope/2019/golf-for-hope-2019.jpg" />
+{% endblock share_meta %}
+
+{% block page_class %}landing events{% endblock %}
+
+{% block cta %}{% endblock %}
+
+{% block site_content %}
+  <section class="hero hero-keep-mobile">
+    <img class="hero-image" src="/img/golf-for-hope/2018/kanon-valley6.jpg" alt="Man playing golf at sunset.">
+    <div class="hero-content text-center">
+      <h1 class="uppercase">Golf for Hope Tournament</h1>
+      <p>Saturday, July 13, 2019 &mdash; Kanon Valley Country Club</p>
+      <a class="button" href="/events/golf-for-hope/2019/register/">Register Now</a>
+    </div>
+  </section>
+  
+  <section class="padding-vertical text-center">
+    <p class="lead maxw">100% of the proceeds from this tournament go directly to the families whose children are diagnosed with cancer or life-threatening illnesses.</p>
+    <p>Emma's Hope is made entirely possible by individuals & corporations like you.</p>
+  </section>
+  
+  <!-- <section class="border-top padding-vertical text-center">
+    <p class="lead">Interested in sponsoring this event?</p>
+    <a href="/events/golf-for-hope/2018/2018-sponsorship-form.pdf" target="_blank">Download the Sponsorship Form</a>
+  </section> -->
+  
+  <section class="info-block margin-top">
+    <div class="info-block-left text-center bg--purple sans">
+      <h3>Tournament Schedule</h3>
+      <p><strong>TBD</strong><br>Registration &mdash; lunch provided</p>
+      <p><strong>TBD</strong><br>Start &mdash; Captain & Crew</p>
+      <p><strong>TBD</strong><br>Dinner &mdash; Awards & Prizes</p>
+    </div>
+    <div class="info-block-right text-center">
+      <h3>Contests</h3>
+      <ul class="no-dots">
+        <li>Hole in One</li>
+        <li>Longest Drive</li>
+        <li>Closest to the Pin</li>
+        <li>Skins</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="content-block padding-vertical no-margin-bottom text-center">
+    <h3 class="no-margin-top-mobile text-center">Tournament Registration</h3>
+    <p>To register as a team or as an individual, or to purchase dinner tickets, please sign up using our online form.</p>
+    <br>
+    <a class="button button--xlarge" href="/events/golf-for-hope/2019/register/">Register Now</a>
+  </section>
+  
+  <!-- <section class="border-top padding-vertical text-center">
+    <h3 class="margin-bottom--big text-center">Thank You To Our Generous Sponsors</h3>
+    <p class="sans margin-bottom">DIAMOND SPONSOR</p>
+    <div class="grid margin-bottom--big">
+      <div class="grid-item padding-bottom">
+        <img class="image--center sponsor" src="/img/golf-for-hope/2018/cfss-logo.jpg" alt="Callahan, Flanagan, Smith & Stock Orthodontics">
+      </div>
+    </div>
+    <p class="sans margin-bottom">RUBY SPONSOR</p>
+    <div class="grid margin-bottom--big">
+      <div class="grid-item padding-bottom">
+        <img class="image--center sponsor" src="/img/golf-for-hope/2018/passalacqua-logo.png" alt="Passalacqua & Associates">
+      </div>
+    </div>
+    <p class="sans">AQUAMARINE SPONSORS</p>
+    <div class="grid">
+      <div class="grid-item">
+        <img class="image--center sponsor" src="/img/golf-for-hope/2018/redeemer-church-logo.jpg" alt="Redeemer Church">
+      </div>
+      <div class="grid-item">
+        <img class="image--center sponsor" src="/img/golf-for-hope/2018/gorman-logo.png" alt="Gorman Foundation">
+      </div>
+    </div>
+  </section> -->
+  
+  <hr class="separator">
+  
+  <section class="content-block text-center">
+    <p>Don't forget to bring extra cash for raffle prize tickets, the 50/50 charity raffle, and extra purchases!</p>
+    <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
+  </section>
+  
+  <div id="floating-panel">
+    <strong>Your Address:</strong>
+    <input id="start" type="text" placeholder="Enter your address..">
+    <button id="getDirections">Get Directions</button>
+  </div>
+  <div id="right-panel"></div>
+  <section id="map" class="map"></section>
+{% endblock %}
+
+{% block footer_scripts %}
+<script>
+  var map;
+  var myLatLng = {lat: 43.140974664881824, lng: -75.70847315000003};
+  function initMap() {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var start = document.getElementById('start');
+    // Create the map with no initial style specified.
+    // It therefore has default styling.
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myLatLng,
+      zoom: 13,
+      mapTypeControl: false
+    });
+    
+    var infoContentString = '<div id="content" class="text-center">' +
+        '<h3 id="firstHeading">Kanon Valley Country Club</h3>' +
+        '<div id="bodyContent">' +
+        '<p>8623 Lake Road<br>Oneida, NY 13421</p>' +
+        '</div></div>';
+    
+    infoWindow = new google.maps.InfoWindow;
+    infoWindow.setPosition(myLatLng);
+    infoWindow.setContent(infoContentString);
+    infoWindow.open(map);
+    map.setCenter(myLatLng);
+    
+    var pin = {
+      path: 'M32.999927,0 C15.326326,0 0.993348,14.333 0.993348,32.0066 C0.993348,49.68024 33.970166,90.00004 33.970166,90.00004 C33.970166,90.00004 65.006652,49.68024 65.006652,32.0066 C65.006652,14.333 50.673571,0 32.999927,0 Z M32.999927,6.4939 C47.090448,6.4939 58.512662,17.9162 58.512662,32.0066 C58.512662,46.09714 47.090448,57.51934 32.999927,57.51934 C18.909552,57.51934 7.487292,46.09714 7.487292,32.0066 C7.487292,17.9162 18.909552,6.4939 32.999927,6.4939 z M51.875345,24.322 C51.875345,24.322 42.955905,38.7101 40.805943,39.9008 C40.497231,40.0441 40.254671,39.9338 38.611879,38.8534 C35.017584,36.5049 25.756355,32.7342 23.573316,32.7233 C21.544634,32.7233 20.397988,34.0794 19.571079,37.4421 C18.997756,39.8347 19.185189,42.5469 20.056199,44.13464 C21.059515,45.97584 22.702306,46.69244 26.627365,47.00124 C27.332994,47.05624 28.545793,47.06724 29.835771,47.06724 C29.824741,46.93494 29.813721,46.80264 29.813721,46.67034 C29.813721,43.93604 32.029689,41.7199 34.764001,41.7199 C37.189599,41.7199 39.251357,43.47294 39.648273,45.86544 C39.979037,45.74424 40.265698,45.63394 40.475182,45.51264 C41.478498,44.98344 41.963617,44.41014 42.106948,43.58324 C42.239254,42.83354 42.382584,42.67914 43.308722,42.2712 C44.047427,41.9404 44.13563,41.8301 45.767396,39.3384 C49.339641,33.9359 51.57766,29.3385 54.863243,24.3219 L51.875345,24.322 z M34.763998,41.3231 C31.820204,41.3231 29.416803,43.72664 29.416803,46.67044 C29.416803,49.61424 31.820204,52.00664 34.763998,52.00664 C37.707793,52.00664 40.11134,49.61424 40.11134,46.67044 C40.11134,43.72664 37.707793,41.3231 34.763998,41.3231 Z M34.763998,42.1169 C37.2778,42.1169 39.317508,44.14564 39.317508,46.67044 C39.317508,49.18424 37.2778,51.22374 34.763998,51.22374 C32.250197,51.22374 30.210635,49.18424 30.210635,46.67044 C30.210635,44.14564 32.250197,42.1169 34.763998,42.1169 z M36.781655 51.64274 35.712187 53.35174 35.182965 58.46754 34.389133 58.46754 33.992217 53.35174 32.801469 51.64274 z',
+      fillColor: '#eb4536',
+      fillOpacity: 1,
+      strokeColor: '#fff',
+      strokeWeight: 0,
+      scale: .4,
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(32, 48)
+    };
+    
+    // Create a marker and set its position.
+    var marker = new google.maps.Marker({
+      map: map,
+      position: myLatLng,
+      icon: pin,
+      title: 'Kanon Valley Country Club'
+    });
+    
+    marker.addListener('click', function() {
+      infoWindow.open(map);
+      map.setCenter(myLatLng);
+    });
+    
+    var dirPanel = document.getElementById('right-panel');
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(dirPanel);
+
+    var control = document.getElementById('floating-panel');
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+    control.style.display = 'block';
+
+    var onClickHandler = function() {
+      if (start.value !== '') {
+        calculateAndDisplayRoute(directionsService, directionsDisplay, dirPanel);
+      }
+    };
+    document.getElementById('getDirections').addEventListener('click', onClickHandler);
+
+    // Set the map's style to the initial value of the selector.
+    map.setOptions({styles: styles['retro']});
+  }
+  
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, directionsPanel) {
+    directionsService.route({
+      origin: document.getElementById('start').value,
+      destination: myLatLng,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsPanel.style.display = 'block';
+        map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(directionsPanel);
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+
+  var styles = {
+    retro : [
+      {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
+      {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+      {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+      {
+        featureType: 'administrative',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#c9b2a6'}]
+      },
+      {
+        featureType: 'administrative.land_parcel',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#dcd2be'}]
+      },
+      {
+        featureType: 'administrative.land_parcel',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#ae9e90'}]
+      },
+      {
+        featureType: 'landscape.natural',
+        elementType: 'geometry',
+        stylers: [{color: '#dfd2ae'}]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'geometry',
+        stylers: [{color: '#dfd2ae'}]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#93817c'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry.fill',
+        stylers: [{color: '#a5b076'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#447530'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{color: '#f5f1e6'}]
+      },
+      {
+        featureType: 'road.arterial',
+        elementType: 'geometry',
+        stylers: [{color: '#fdfcf8'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{color: '#f8c967'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#e9bc62'}]
+      },
+      {
+        featureType: 'road.highway.controlled_access',
+        elementType: 'geometry',
+        stylers: [{color: '#e98d58'}]
+      },
+      {
+        featureType: 'road.highway.controlled_access',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#db8555'}]
+      },
+      {
+        featureType: 'road.local',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#806b63'}]
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'geometry',
+        stylers: [{color: '#dfd2ae'}]
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#8f7d77'}]
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'labels.text.stroke',
+        stylers: [{color: '#ebe3cd'}]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'geometry',
+        stylers: [{color: '#dfd2ae'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry.fill',
+        stylers: [{color: '#b9d3c2'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#92998d'}]
+      }
+    ]
+  };
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZYHD9HM0X2bglt9fX1mfNRdgsV6Ohjw&callback=initMap"
+        async defer></script>
+{% endblock %}

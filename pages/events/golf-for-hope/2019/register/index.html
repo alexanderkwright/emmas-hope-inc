@@ -1,0 +1,579 @@
+{% extends "layout.nunjucks" %}
+
+{% set page_title = "events" %}
+
+{% block site_title %}Register for the Emma's Hope 2019 Golf For Hope Charity Golf Tournament | {% endblock %}
+
+{% block share_meta %}
+<meta property="og:url" content="https://emmashopeinc.org/events/golf-for-hope/2019/register/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Register for Emma's Hope Golf for Hope Charity Golf Tournament" />
+<meta property="og:description" content="Register as a team, single player, or dinner guest today for our Golf for Hope Charity Golf Tournament. We are playing at Kanon Valley Country Club in Oneida, NY on Saturday, July 13, 2019." />
+<meta property="og:image" content="https://emmashopeinc.org/img/golf-for-hope/2019/golf-for-hope-2019.jpg" />
+{% endblock share_meta %}
+
+{% block page_class %}no-promo events{% endblock %}
+
+{% block promomtions %}{% endblock %}
+{% block cta %}{% endblock %}
+
+{% block site_content %}
+  
+  <section class="content-block text-center no-margin-bottom">
+    <h1 class="site-title">Tournament Registration</h1>
+    <p>Saturday, July 13, 2019 &mdash; Kanon Valley Country Club <a class="nolink" href="https://maps.google.com/?saddr=Current+Location&daddr=43.140974664881824,-75.70847315000003&driving" target="_blank">(get directions)</a></p>
+    <!-- <p>Rather register by mail & check?<br><a href="/events/golf-for-hope/2019/2019-registration-form-nofill.pdf" target="_blank">Download the Registration Form</a></p> -->
+  </section>
+  
+  <!-- <div class="callout text-center margin-bottom no-margin-top">
+    <p class="sans spaced upper"><strong>Registration ends June 30th, 2018</strong></p>
+  </div> -->
+  
+  <section class="content-block">
+    <div class="text-center">
+      <h3 class="sans text-center">Choose to register as...</h3>
+      
+      <div class="golfer-choices">
+        <input data-price="400" id="golfer_foursome" value="foursome" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_foursome" class="golfer-choice">
+          A team of four <span class="price">$400 + $9.30 PayPal fee</span>
+          <p>Includes 18 holes of golf, cart, lunch, dinner, entry to the longest drive contest.</p>
+        </label>
+        
+        <input data-price="100" id="golfer_single" value="single" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_single" class="golfer-choice">
+          A single golfer <span class="price">$100 + $2.56 PayPal fee</span>
+          <p>Includes 18 holes of golf, cart, lunch, dinner, entry to the longest drive contest.</p>
+        </label>
+        
+        <input data-price="50" id="golfer_dinner" value="dinner" type="radio" name="golfer_type" class="golfer-radio">
+        <label for="golfer_dinner" class="golfer-choice">
+          A Dinner guest only <span class="price">$50 + $1.43 PayPal fee</span>
+          <p>Ability to participate in 50/50 raffle, silent and basket auctions.</p>
+        </label>
+      </div>
+      
+      <p class="margin-bottom--big sans"><strong>Total cost today: <span class="js-total">$0</span></strong></p>
+    </div>
+    
+    <form id="register-foursome" action="" method="GET" class="register-form is-hidden">     
+      <div id="golfer-foursome">
+        <div class="form-field">
+          <div class="form-row">
+            <label for="team_name">Team Name: <span>(required)</span></label>
+            <input id="team_name" type="text" class="js-fields inputs" required>
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 1 <span>(Team Captain)</span></h2>
+          <div class="form-row">
+            <label for="golfer_1_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_1_name" type="text" name="golf1n" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_1_email">Email: <span>(required)</span></label>
+            <input id="golfer_1_email" type="email" name="golf1e" class="js-fields inputs" required>
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 2</h2>
+          <div class="form-row">
+            <label for="golfer_2_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_2_name" type="text" name="golf2n" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_2_email">Email:</label>
+            <input id="golfer_2_email" type="email" name="golf2e" class="js-fields inputs">
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 3</h2>
+          <div class="form-row">
+            <label for="golfer_3_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_3_name" type="text" name="golf3n" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_3_email">Email:</label>
+            <input id="golfer_3_email" type="email" name="golf3e" class="js-fields inputs">
+          </div>
+        </div>
+        
+        <div class="form-field">
+          <h2>Golfer 4</h2>
+          <div class="form-row">
+            <label for="golfer_4_name">Full Name: <span>(required)</span></label>
+            <input id="golfer_4_name" type="text" name="golf4n" class="js-fields inputs" required>
+          </div>
+          <div class="form-row">
+            <label for="golfer_4_email">Email:</label>
+            <input id="golfer_4_email" type="email" name="golf4e" class="js-fields inputs">
+          </div>
+        </div>
+      </div>
+      
+      <div id="foursome-paypal-button" class="paypal-buttons margin-top text-center"></div>
+    </form>
+    
+    <form id="register-single" action="./" method="GET" class="register-form is-hidden">
+      <p class="text-center">We're happy to add you to a team of four for the tournament.</p>
+      <div class="form-field padding-bottom">
+        <h2>Your Information</h2>
+        <div class="form-row">
+          <label for="single_name">Full Name: <span>(required)</span></label>
+          <input id="single_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="single_email">Email: <span>(required)</span></label>
+          <input id="single_email" type="email" class="js-fields inputs" required>
+        </div>
+      </div>
+      <div id="single-paypal-button" class="paypal-buttons margin-top text-center"></div>
+    </form>
+    
+    <form id="register-dinner" action="./" method="GET" class="register-form is-hidden">
+      <div class="form-field padding-bottom">
+        <h2>Your Information</h2>
+        <div class="form-row">
+          <label for="dinner_name">Full Name: <span>(required)</span></label>
+          <input id="dinner_name" type="text" class="js-fields inputs" required>
+        </div>
+        <div class="form-row">
+          <label for="dinner_email">Email: <span>(required)</span></label>
+          <input id="dinner_email" type="email" class="js-fields inputs" required>
+        </div>
+      </div>
+      <div id="dinner-paypal-button" class="paypal-buttons margin-top text-center"></div>
+    </form>
+    
+  </section>
+  
+  <section class="info-block bg--gray margin-top">
+    <div class="info-block-left text-center">
+      <h3>Player's Pack Add-on</h3>
+      <p>(Purchase for $50 at the Event)</p>
+      <ul class="text-left">
+        <li>Entry to Closest to the Pin contest</li>
+        <li>Entry to Hole in One contest</li>
+        <li>Two Mulligans</li>
+      </ul>
+    </div>
+    <div class="info-block-right text-center border-left border-top--mobile">
+      <h3>Individual Add-ons</h3>
+      <p>(Purchase individually at the Event)</p>
+      <ul class="text-left">
+        <li>$25 &mdash; Entry to Closest to the Pin contest</li>
+        <li>$25 &mdash; Entry to Hole in One contest</li>
+        <li>$20 &mdash; Team entry for Skins</li>
+        <li>$10 &mdash; Two mulligans</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="padding-vertical border-bottom text-center">
+    <p>For Registration Information or Questions, contact Emma's Hope at <a href="tel:+13152175567">315-217-5567</a> or <a href="mailto:hello@emmashopeinc.org">hello@emmashopeinc.org</a></p>
+  </section>
+{% endblock %}
+
+{% block footer_scripts %}
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script>
+    function scrollIt(destination, duration = 200, easing = 'linear', callback) {
+      const easings = {
+        linear(t) {
+          return t;
+        },
+        easeInQuad(t) {
+          return t * t;
+        },
+        easeOutQuad(t) {
+          return t * (2 - t);
+        },
+        easeInOutQuad(t) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        },
+        easeInCubic(t) {
+          return t * t * t;
+        },
+        easeOutCubic(t) {
+          return (--t) * t * t + 1;
+        },
+        easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        },
+        easeInQuart(t) {
+          return t * t * t * t;
+        },
+        easeOutQuart(t) {
+          return 1 - (--t) * t * t * t;
+        },
+        easeInOutQuart(t) {
+          return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+        },
+        easeInQuint(t) {
+          return t * t * t * t * t;
+        },
+        easeOutQuint(t) {
+          return 1 + (--t) * t * t * t * t;
+        },
+        easeInOutQuint(t) {
+          return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
+        }
+      };
+
+      const start = window.pageYOffset;
+      const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+      const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+      const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+      const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+      if ('requestAnimationFrame' in window === false) {
+        window.scroll(0, destinationOffsetToScroll);
+        if (callback) {
+          callback();
+        }
+        return;
+      }
+
+      function scroll() {
+        const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const time = Math.min(1, ((now - startTime) / duration));
+        const timeFunction = easings[easing](time);
+        window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+
+        if (window.pageYOffset === destinationOffsetToScroll) {
+          if (callback) {
+            callback();
+          }
+          return;
+        }
+
+        requestAnimationFrame(scroll);
+      }
+
+      scroll();
+    }
+  </script>
+  <script>
+    const ENVIRONMENT = 'production'; // sandbox | production
+    const STYLE = { layout: 'vertical', size: 'responsive', shape: 'pill', color: 'gold' };
+    const IDS = {
+        sandbox:'AWaVhlxaePxWX0eEwAslx0kdyS2Lpu3xHCI2xcQ5vrHhxGcKXowCWWvClBi8UflpLyBRc0tx4KL0amkP',
+        production: 'AYC_WlgGsZDfz3As3hsAugPorx_VIWiP169tdbYRkAAyKJoAD_rOqHPJXtRbdHJkij8nG7dSiLJo2C5l'
+      };
+    
+    const APIData = {
+      'headers': new Headers({
+        'Accept': 'application/json'
+      }),
+      'urls': {
+        'upload': 'https://script.google.com/macros/s/AKfycbwvV6Ccj9DbAUZ2vySUWr9FkwN-4mIBZcoXbX1URtOFSyscoSY/exec'
+      }
+    };
+    
+    const callAPI = async (APIurl, data) => {
+      // Options for the fetch call
+      let fetchOptions = {
+        headers: APIData.headers,
+        method: 'GET'
+      };
+
+      // Make the request to the server and return
+      // the response once the Promise is resolved
+      return (await fetch(APIurl, fetchOptions)).json();
+    }
+    
+    function isValid(formName) {
+      return document.getElementById('register-' + formName).checkValidity();
+    }
+    
+    function listener(arr, add, evt, fn) {
+      arr.forEach(function(item) {
+        if (add) {
+          item.addEventListener(evt, fn, false);
+        } else {
+          item.removeEventListener(evt, fn, false);
+        }
+      });
+    }
+    
+    function onBlurFields(formName, handler) {
+      let form = document.getElementById('register-' + formName);
+      let allFields = [].slice.call(document.querySelectorAll('.js-inputs'));
+      let formFields = [].slice.call(form.querySelectorAll('.js-fields'));
+      
+      listener(allFields, false, 'blur', handler);
+      listener(formFields, true, 'blur', handler);
+    }
+    
+    function toggleValidationMessage(formName) {
+      document.getElementById('register-' + formName).reportValidity();
+    }
+    
+    function toggleButtons(formName, actions) {
+      return isValid(formName) ? actions.enable() : actions.disable();
+    }
+    
+    paypal.Button.render({
+      env: ENVIRONMENT,
+      style: STYLE,
+      funding: { disallowed: [ paypal.FUNDING.CREDIT ] },
+      client: IDS,
+      commit: true,
+      
+      validate: function(actions) {
+        toggleButtons('foursome', actions);
+        
+        onBlurFields('foursome', function() {
+          toggleButtons('foursome', actions);
+        });
+      },
+      
+      onClick: function() {
+        toggleValidationMessage('foursome');
+      },
+
+      payment: function(data, actions) {
+        return actions.payment.create({
+          payment: {
+            transactions: [
+              {
+                amount: { total: 409.30, currency: 'USD' },
+                description: 'Golf For Hope 2019 Registration - Foursome'
+              }
+            ],
+            redirect_urls: {
+              return_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/thank-you/',
+              cancel_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/cancel/'
+            }
+          }
+        });
+      },
+
+      onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+          
+          let formData = {
+            "team_name": document.getElementById('team_name').value,
+            "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
+            "registration_type": 'Foursome',
+            "date_paid": new Date(Date.now()).toLocaleString().split(',')[0],
+            "single_name": '',
+            "single_email": '',
+            "golfer_1_name": document.getElementById('golfer_1_name').value,
+            "golfer_1_email": document.getElementById('golfer_1_email').value,
+            "golfer_2_name": document.getElementById('golfer_2_name').value,
+            "golfer_2_email": document.getElementById('golfer_2_email').value,
+            "golfer_3_name": document.getElementById('golfer_3_name').value,
+            "golfer_3_email": document.getElementById('golfer_3_email').value,
+            "golfer_4_name": document.getElementById('golfer_4_name').value,
+            "golfer_4_email": document.getElementById('golfer_4_email').value
+          };
+          newData = JSON.stringify(formData);
+          newData = newData.replace(/{"/g, "?");
+          newData = newData.replace(/":"/g, "=");
+          newData = newData.replace(/","/g, "&");
+          newData = newData.replace(/"}/g, "");
+          
+          callAPI(APIData.urls.upload + newData, formData)
+            .then((uploadResponse) => {
+              if (uploadResponse.result === 'success') {
+                return actions.redirect();
+              }
+          });
+        });
+      },
+      
+      onError: function(err) {
+        console.log(err);
+      }
+
+    }, '#foursome-paypal-button');
+    
+    // Single Form
+    paypal.Button.render({
+      env: ENVIRONMENT,
+      style: STYLE,
+      funding: { disallowed: [ paypal.FUNDING.CREDIT ] },
+      client: IDS,
+      commit: true,
+      
+      validate: function(actions) {
+        toggleButtons('single', actions);
+        
+        onBlurFields('single', function() {
+          toggleButtons('single', actions);
+        });
+      },
+      
+      onClick: function() {
+        toggleValidationMessage('single');
+      },
+
+      payment: function(data, actions) {
+        return actions.payment.create({
+          payment: {
+            transactions: [
+              {
+                amount: { total: 102.56, currency: 'USD' },
+                description: 'Golf For Hope 2019 Registration - Single'
+              }
+            ],
+            redirect_urls: {
+              return_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/thank-you/',
+              cancel_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/cancel/'
+            }
+          }
+        });
+      },
+
+      onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+          
+          let formData = {
+            "team_name": '',
+            "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
+            "registration_type": 'Single',
+            "date_paid": new Date(Date.now()).toLocaleString().split(',')[0],
+            "single_name": document.getElementById('single_name').value,
+            "single_email": document.getElementById('single_email').value,
+            "golfer_1_name": '', "golfer_1_email": '', "golfer_2_name": '', "golfer_2_email": '', "golfer_3_name": '', "golfer_3_email": '', "golfer_4_name": '', "golfer_4_email": ''
+          };
+          newData = JSON.stringify(formData);
+          newData = newData.replace(/{"/g, "?");
+          newData = newData.replace(/":"/g, "=");
+          newData = newData.replace(/","/g, "&");
+          newData = newData.replace(/"}/g, "");
+          
+          callAPI(APIData.urls.upload + newData, formData)
+            .then((uploadResponse) => {
+              if (uploadResponse.result === 'success') {
+                return actions.redirect();
+              }
+          });
+        });
+      },
+      
+      onError: function(err) {
+        console.log(err);
+      }
+
+    }, '#single-paypal-button');
+      
+    // Dinner Form
+    paypal.Button.render({
+      env: ENVIRONMENT,
+      style: STYLE,
+      funding: { disallowed: [ paypal.FUNDING.CREDIT ] },
+      client: IDS,
+      commit: true,
+      
+      validate: function(actions) {
+        toggleButtons('dinner', actions);
+        
+        onBlurFields('dinner', function() {
+          toggleButtons('dinner', actions);
+        });
+      },
+      
+      onClick: function() {
+        toggleValidationMessage('dinner');
+      },
+
+      payment: function(data, actions) {
+        return actions.payment.create({
+          payment: {
+            transactions: [
+              {
+                amount: { total: 51.43, currency: 'USD' },
+                description: 'Golf For Hope 2019 Registration - Dinner'
+              }
+            ],
+            redirect_urls: {
+              return_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/thank-you/',
+              cancel_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/cancel/'
+            }
+          }
+        });
+      },
+
+      onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+          
+          let formData = {
+            "team_name": '',
+            "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
+            "registration_type": 'Dinner',
+            "date_paid": new Date(Date.now()).toLocaleString().split(',')[0],
+            "single_name": document.getElementById('dinner_name').value,
+            "single_email": document.getElementById('dinner_email').value,
+            "golfer_1_name": '', "golfer_1_email": '', "golfer_2_name": '', "golfer_2_email": '', "golfer_3_name": '', "golfer_3_email": '', "golfer_4_name": '', "golfer_4_email": ''
+          };
+          newData = JSON.stringify(formData);
+          newData = newData.replace(/{"/g, "?");
+          newData = newData.replace(/":"/g, "=");
+          newData = newData.replace(/","/g, "&");
+          newData = newData.replace(/"}/g, "");
+          
+          callAPI(APIData.urls.upload + newData, formData)
+            .then((uploadResponse) => {
+              if (uploadResponse.result === 'success') {
+                return actions.redirect();
+              }
+          });
+        });
+      },
+      
+      onError: function(err) {
+        console.log(err);
+      }
+
+    }, '#dinner-paypal-button');
+    
+    const registerForms = [].slice.call(document.querySelectorAll('.register-form'));
+    const priceTotal = document.querySelector('.js-total');
+    const golferButtons = [].slice.call(document.querySelectorAll('.golfer-radio'));
+    const PP_PERCENT = 0.022;
+    const PP_FEE = .30;
+
+    let buttonsLoaded = false;
+    
+    const showHideForms = function(toShow, toHide) {
+      toHide.forEach(function(ele) {
+        if (!ele.classList.contains('is-hidden')) {
+          ele.classList.add('is-hidden');
+        }
+      });
+      toShow.classList.remove('is-hidden');
+    }
+    
+    const updateInfo = function(ele) {
+      let amount = (parseFloat(ele.dataset.price) + PP_FEE) / (1 - PP_PERCENT);
+      priceTotal.innerHTML = '$' + amount.toFixed(2);
+    }
+    
+    golferButtons.forEach(function(button) {
+      button.addEventListener('change', function() {
+        let val = this.value;
+        // if (!buttonsLoaded) {
+        //   let fnName = 'renderPayPal' + this.value.charAt(0).toUpperCase() + this.value.slice(1);
+        //   console.log(fnName);
+        //   window[fnName]();
+        //   buttonsLoaded = true;
+        // }
+        
+        if (document.documentElement.clientHeight <= 700 && val === 'foursome') {
+          scrollIt(document.querySelector('.js-total'), 300, 'easeOutQuad');
+        }
+        
+        showHideForms(document.getElementById('register-'+ this.value), registerForms);
+        
+        updateInfo(this);
+      });
+    });
+  </script>
+{% endblock %}
