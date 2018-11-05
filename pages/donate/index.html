@@ -1,20 +1,22 @@
 {% extends "layout.nunjucks" %}
 
-{% block site_title %}Donate - Give the Gift of Hope | {% endblock %}
+{% block site_title %}Donate - Give the Gift of Hope |
+{% endblock %}
 
 {% block page_class %}no-promo donate{% endblock %}
 
 {% block site_content %}
   <section class="content-block text-center">
-    <h1 class="site-title">Donate Online with PayPal</h1>    
+    <h1 class="site-title">Donate Online with PayPal</h1>
 
-    <div class="donation-buttons margin-bottom--big">      
+    <div class="donation-buttons margin-bottom--big">
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <div class="margin-bottom">
           <label for="donation-designation">
             Where would you like the money to go?<br>
             <select id="donation-designation" class="designation">
               <option value="general">General Fund</option>
+              <option value="gifts-of-hope">Gifts of Hope</option>
               <option value="mom-boxes">Mom Boxes</option>
               <option value="financial">Financial Help</option>
               <option value="bereavement">Bereavement Help</option>
@@ -22,7 +24,7 @@
           </label>
         </div>
         <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="image_url" value="https://www.emmashopeinc.org/img/emmas-hope-logo-150.png">
+        <input type="hidden" name="image_url" value="https://www.emmashopeinc.org/img/site-logo_color.svg">
         <input type="hidden" name="business" value="TSDUXTF3FPDGJ">
         <input type="hidden" name="lc" value="US">
         <input id="js-designation" type="hidden" name="item_name" value="General Fund">
@@ -35,13 +37,11 @@
         <input type="image" src="/img/paypal-button.svg" border="0" name="submit" alt="Donate to Emma's Hope, Inc. online using PayPal here.">
       </form>
     </div>
-    
+
     <p>Thank you for showing parents whose children are fighting for their lives that they are loved and never without hope. By strengthening the parents, you are helping their children.</p>
-    
-    <!-- <div class="notice">
-      <p><strong>*PLEASE NOTE*<br>2.2% + $0.30 of all donations are deducted as a PayPal processing fee.</strong> For example, if you gave $100, we would receive $97.50.</p>
-    </div> -->
-    
+
+    <!-- <div class="notice"> <p><strong>*PLEASE NOTE*<br>2.2% + $0.30 of all donations are deducted as a PayPal processing fee.</strong> For example, if you gave $100, we would receive $97.50.</p> </div> -->
+
   </section>
 
   <section class="text-center padding-vertical bg--gray">
@@ -52,7 +52,11 @@
       PO Box 105<br>
       Sherrill, NY 13461
     </address>
-    <p><em>Please make all checks payable to: <strong>Emma's Hope, Inc.</strong></em></p>
+    <p>
+      <em>Please make all checks payable to:
+        <strong>Emma's Hope, Inc.</strong>
+      </em>
+    </p>
   </section>
 {% endblock %}
 
@@ -63,34 +67,44 @@
 {% block footer_scripts %}
   <script>
     var designationSelect = document.getElementById('donation-designation');
-    var designationValue  = document.getElementById('js-designation');
-    var designationObj    = {
+    var designationValue = document.getElementById('js-designation');
+    var designationObj = {
       'general': 'General Fund',
+      'gifts-of-hope': 'Gifts of Hope',
       'mom-boxes': 'Mom Boxes',
       'financial': 'Financial Help',
-      'bereavement': 'Bereavement Help' };
-    
-    designationSelect.addEventListener('change', function() {
-      designationValue.value = this.options[this.selectedIndex].text;
+      'bereavement': 'Bereavement Help'
+    };
+
+    designationSelect.addEventListener('change', function () {
+      designationValue.value = this
+        .options[this.selectedIndex]
+        .text;
     }, false);
-    
+
     function urlHasDesignation() {
-      return window.location.search.indexOf('designation');
+      return window
+        .location
+        .search
+        .indexOf('designation');
     }
-    
+
     function getURLParams() {
-      var path = window.location.search.replace(/\+/g, ' '),
-          params = {},
-          tokens,
-          re = /[?&]?([^=]+)=([^&]*)/g;
-      
+      var path = window
+          .location
+          .search
+          .replace(/\+/g, ' '),
+        params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
       while (tokens = re.exec(path)) {
         params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
       }
-      
+
       return params;
     }
-    
+
     // Does the page have a URL designation parameter?
     if (urlHasDesignation()) {
       // Yes - now get all Params
