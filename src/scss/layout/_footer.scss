@@ -16,14 +16,13 @@
   }
 
   &__col {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     text-align: center;
 
     @media (min-width: 840px) {
       flex: 1 0 calc(100% / 3);
 
       h3 {
-        
         @media (min-width: 840px) {
           font-size: 180%;
         }
@@ -32,7 +31,7 @@
 
     a {
       display: block;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       color: $pink;
 
@@ -46,6 +45,10 @@
     }
   }
 
+  &__awards {
+    margin-bottom: 2rem;
+  }
+
   &__legal {
     font-size: 100%;
     text-align: center;
@@ -57,7 +60,7 @@
 
     span {
       display: block;
-      
+
       a {
         color: inherit;
       }
