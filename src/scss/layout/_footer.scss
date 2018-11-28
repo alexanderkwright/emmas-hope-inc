@@ -47,6 +47,11 @@
 
   &__awards {
     margin-bottom: 2rem;
+    text-align: center;
+
+    a {
+      display: inline-block;
+    }
   }
 
   &__legal {
