@@ -195,14 +195,17 @@ Emma's Hope, Inc</title>
   
   
   <script>
+    var progressDaysLeft = document.querySelector('.js-days-left');
+    var progressDaysLabel = document.querySelector('.js-days-label');
+    var progressDaysFull = document.querySelector('.js-days-full');
+
+    /**
+     * Uncomment for sponsorship form *
+     *
     var PP_PERCENT = 0.022;
     var PP_FEE = .30;
     var BASE_GIFT = 100;
     var AMT_SENT = 0.00;
-
-    var progressDaysLeft = document.querySelector('.js-days-left');
-    var progressDaysLabel = document.querySelector('.js-days-label');
-    var progressDaysFull = document.querySelector('.js-days-full');
 
     var sponsorAmount = document.querySelector('.js-sponsor-amount');
     var sponsorButtons = document.querySelectorAll('.js-sponsor-button');
@@ -255,6 +258,8 @@ Emma's Hope, Inc</title>
           sponsorTotal.value = "$" + amount.toFixed(2) + " this Christmas";
         });
       });
+
+    */
 
     function updateDays(daysEle, labelEle, labelFull) {
       var endDate = new Date('12/25/2018 12:0 AM');
