@@ -4,9 +4,13 @@
   }
   &-bottom {
     margin-bottom: 2rem;
-    
+
     &--big {
       margin-bottom: 4rem;
+
+      &-force {
+        margin-bottom: 4rem !important;
+      }
     }
   }
 }
@@ -14,10 +18,10 @@
 .no-margin {
   &-top {
     margin-top: 0 !important;
-    
+
     &-mobile {
       margin-top: 0 !important;
-      
+
       @media (min-width: 880px) {
         margin-top: 3rem !important;
       }
@@ -25,10 +29,10 @@
   }
   &-bottom {
     margin-bottom: 0 !important;
-    
+
     &-mobile {
       margin-bottom: 0 !important;
-      
+
       @media (min-width: 880px) {
         margin-bottom: 2rem !important;
       }
