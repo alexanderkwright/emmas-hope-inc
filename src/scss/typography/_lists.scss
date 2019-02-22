@@ -1,0 +1,28 @@
+.no-dots {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.big-list {
+  li {
+    font-size: 120%;
+  }
+}
+
+.spaced-list {
+  li {
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
