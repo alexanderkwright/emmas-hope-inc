@@ -1,13 +1,21 @@
-.text-center { text-align: center !important; }
-.text-left { text-align: left !important; }
-.text-right { text-align: right !important; }
-.uppercase { text-transform: uppercase; }
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 
 .is-hidden {
   max-height: 0;
   overflow: hidden;
   pointer-events: none;
-  transition: .2s ease;
+  transition: 0.2s ease;
 }
 
 .maxw {
@@ -16,7 +24,9 @@
   margin-right: auto;
 }
 
-.script { font-family: $script; }
+.script {
+  font-family: $script;
+}
 
 .separator {
   margin-top: 1rem;
@@ -24,21 +34,4 @@
   height: 1px;
   background: $xmas-gray;
   border: 0;
-}
-
-.no-dots {
-  list-style: none;
-  padding: 0;
-  
-  li {
-    margin-bottom: 1rem;
-    
-    &:last-of-type { margin-bottom: 0; }
-  }
-}
-
-.big-list {
-  li {
-    font-size: 120%;
-  }
 }
