@@ -16,6 +16,13 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    transition: transform .15s ease;
+    
+    @media (min-width: 1024px) {
+      &:hover {
+        transform: scale(1.02) translateY(-.25rem);
+      }
+    }
     
     img {
       display: block;
