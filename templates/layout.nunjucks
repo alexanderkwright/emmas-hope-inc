@@ -57,6 +57,7 @@
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 </head>
 <body class="site {% block page_class %}{% endblock %}">
+  {% block fb_sdk %}{% endblock %}
   {% block promotions %}
     
   {% endblock %}
