@@ -8,14 +8,14 @@
   <meta name="keywords" content="charity, syracuse, give, help, parents, families, children, new york, life-threatening, illness, cancer, leukemia, childhood cancer, central new york, life-threatening illness, child diagnosed">
   <meta itemprop="name" content="Emma's Hope, Inc.">
   <meta itemprop="description" content="Emma's Hope, Inc. is a nonprofit organization supporting parents of children diagnosed with life-threatening illnesses. 100% of public donations go to supporting these parents.">
-  <meta itemprop="image" content="https://emmashopeinc.org/img/logo@2x.png">
+  <meta itemprop="image" content="https://www.emmashopeinc.org/img/logo@2x.png">
   
   
-<meta property="og:url" content="https://emmashopeinc.org/events/golf-for-hope/2019/register/">
+<meta property="og:url" content="https://www.emmashopeinc.org/events/golf-for-hope/2019/register/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Register for Emma's Hope Golf for Hope Charity Golf Tournament">
 <meta property="og:description" content="Register as a team, single player, or dinner guest today for our Golf for Hope Charity Golf Tournament. We are playing at Kanon Valley Country Club in Oneida, NY on Saturday, July 13, 2019.">
-<meta property="og:image" content="https://emmashopeinc.org/img/golf-for-hope/2019/golf-for-hope-2019.jpg">
+<meta property="og:image" content="https://www.emmashopeinc.org/img/golf-for-hope/2019/golf-for-hope-2019.jpg">
 
   
   <meta name="google-site-verification" content="fdAk1yrHsa9ska_kW0rZwwRoR21z13u2ZBKJ0C-pM-4">
@@ -432,8 +432,6 @@ scroll()}</script>
 
         onApprove: function(data, actions) {
           return actions.order.capture().then(function(details) {
-          
-            console.log(details);
             
             let formData = {
               "team_name": document.getElementById('team_name').value,
@@ -460,18 +458,20 @@ scroll()}</script>
             callAPI(APIData.urls.upload + newData, formData)
               .then((uploadResponse) => {
                 if (uploadResponse.result === 'success') {
-                  window.location.replace('https://emmashopeinc.org/events/golf-for-hope/2019/thank-you/');
+                  toggleVisibleSections();
+                  thankYouContent.innerHTML = thankYouMessage(details);
+                  //window.location.replace('https://www.emmashopeinc.org/events/golf-for-hope/2019/thank-you/');
                 }
             });
           });
         },
         
         onCancel: function(data) {
-          window.location.replace('https://emmashopeinc.org/events/golf-for-hope/2019/cancel/');
+          window.location.replace('https://www.emmashopeinc.org/events/golf-for-hope/2019/cancel/');
         },
         
         onError: function(err) {
-          console.log(err);
+          console.error(err);
         }
 
       }).render('#foursome-paypal-button');
@@ -529,11 +529,11 @@ scroll()}</script>
         },
         
         onCancel: function(data) {
-          window.location.replace('https://emmashopeinc.org/events/golf-for-hope/2019/cancel/');
+          window.location.replace('https://www.emmashopeinc.org/events/golf-for-hope/2019/cancel/');
         },
         
         onError: function(err) {
-          console.log(err);
+          console.error(err);
         }
 
       }).render('#single-paypal-button');
