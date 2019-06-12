@@ -42,20 +42,20 @@
         <input data-price="320" id="golfer_foursome" value="foursome" type="radio" name="golfer_type" class="golfer-radio">
         <label for="golfer_foursome" class="golfer-choice">
           A team of four <span class="price">$320 + $7.51 PayPal fee</span>
-          <p>Includes 18 holes of golf, cart, food, entry to the longest drive contest.</p>
+          <p>Includes 18 holes of golf, cart, food, drink ticket, entry to the longest drive contest.</p>
         </label>
         
         <input data-price="80" id="golfer_single" value="single" type="radio" name="golfer_type" class="golfer-radio">
         <label for="golfer_single" class="golfer-choice">
           A single golfer <span class="price">$80 + $2.11 PayPal fee</span>
-          <p>Includes 18 holes of golf, cart, food, entry to the longest drive contest.</p>
+          <p>Includes 18 holes of golf, cart, food, drink ticket, entry to the longest drive contest.</p>
         </label>
         
-        <!--<input data-price="40" id="golfer_dinner" value="dinner" type="radio" name="golfer_type" class="golfer-radio">
+        <input data-price="30" id="golfer_dinner" value="dinner" type="radio" name="golfer_type" class="golfer-radio">
         <label for="golfer_dinner" class="golfer-choice">
-          A Dinner guest only <span class="price">$40 + $1.43 PayPal fee</span>
-          <p>Ability to participate in 50/50 raffle, silent and basket auctions.</p>
-        </label>-->
+          A Dinner guest only <span class="price">$30 + $0.98 PayPal fee</span>
+          <p>Includes dinner and able to participate in 50/50 raffle and raffle baskets.</p>
+        </label>
       </div>
       
       <p class="margin-bottom--big sans"><strong>Total cost today: <span class="js-total">$0</span></strong></p>
@@ -139,7 +139,6 @@
       <div id="single-paypal-button" class="paypal-buttons margin-top text-center"></div>
     </form>
     
-    <!--
     <form id="register-dinner" action="./" method="GET" class="register-form is-hidden">
       <div class="form-field">
         <h2>Your Information</h2>
@@ -154,7 +153,6 @@
       </div>
       <div id="dinner-paypal-button" class="paypal-buttons margin-top text-center"></div>
     </form>
-    -->
     
     <div class="text-center margin-top">
       <div class="fb-share-button" data-href="https://emmashopeinc.org/events/golf-for-hope/2019/register/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Femmashopeinc.org%2Fevents%2Fgolf-for-hope%2F2019%2Fregister%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
@@ -239,7 +237,7 @@ scroll()}</script>
       }
       
       function resetForms() {
-        ['foursome', 'single'].forEach( (form) => {
+        ['foursome', 'single', 'dinner'].forEach( (form) => {
           document.getElementById(`register-${form}`).reset();
         });
       }
@@ -421,9 +419,8 @@ scroll()}</script>
       }).render('#single-paypal-button');
         
       // Dinner Form
-      /*
       paypal.Buttons({
-        validate: function(actions) {
+        onInit: function(data, actions) {
           toggleButtons('dinner', actions);
           
           onBlurFields('dinner', function() {
@@ -435,26 +432,17 @@ scroll()}</script>
           toggleValidationMessage('dinner');
         },
 
-        payment: function(data, actions) {
+        createOrder: function(data, actions) {
           return actions.order.create({
             purchase_units: [{
-                amount: { value: 51.43, currency_code: 'USD' },
+                amount: { value: 30.98, currency_code: 'USD' },
                 description: 'Golf For Hope 2019 Registration - Dinner'
-            }],
-            application_context: {
-              payment_method: {
-                payer_selected: PAYPAL,
-                payee_preferred: IMMEDIATE_PAYMENT_REQUIRED
-              },
-              return_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/thank-you/',
-              cancel_url: 'https://emmashopeinc.org/events/golf-for-hope/2019/cancel/'
-            }
+            }]
           });
         },
 
         onApprove: function(data, actions) {
           return actions.order.capture().then(function(details) {
-            
             let formData = {
               "team_name": '',
               "registration_date": new Date(Date.now()).toLocaleString().split(',')[0],
@@ -473,19 +461,22 @@ scroll()}</script>
             callAPI(APIData.urls.upload + newData, formData)
               .then((uploadResponse) => {
                 if (uploadResponse.result === 'success') {
-                  console.log(actions);
-                  //return actions.redirect();
+                  toggleVisibleSections();
+                  thankYouContent.innerHTML = thankYouMessage(details);
                 }
             });
           });
         },
         
+        onCancel: function(data) {
+          window.location.replace('https://www.emmashopeinc.org/events/golf-for-hope/2019/cancel/');
+        },
+        
         onError: function(err) {
-          console.log(err);
+          console.error(err);
         }
 
       }).render('#dinner-paypal-button');
-      */
       
       const registerForms = [].slice.call(document.querySelectorAll('.register-form'));
       const priceTotal = document.querySelector('.js-total');
