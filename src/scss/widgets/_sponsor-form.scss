@@ -1,13 +1,15 @@
-.sponsor-form {  
-  margin-bottom: 4rem;
+.sponsor-form {
+  background-color: $xmas-gray;
+  padding: 1rem;
   
   font-size: 120%;
   text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   
   @media (min-width: 540px) {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    font-size: 150%;
+    padding: 2rem;
+    font-size: 120%;
   }
   
   &-amount {
@@ -22,10 +24,13 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+    
+    @media (min-width: 540px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   
   input[type="radio"] {
@@ -36,44 +41,57 @@
     position: absolute;
     
     &.is-active + label {
-      background: $gold-light;
+      background-color: lighten($blue-dark, 70%);
+      border-color: $blue-dark;
+      color: $blue-dark;
+      
+      &::before {
+        content: '✓';
+        position: absolute;
+        top: .25rem;
+        right: .25rem;
+        
+        height: 1rem;
+        width: 1rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background-color: $blue-dark;
+        color: white;
+        border-radius: 3rem;
+      }
     }
   }
   
   &-button {
-    flex-basis: 100%;
-      
-    display: inline-block;
-    padding: .25rem 1rem;
-    margin-bottom: 1rem;
-    flex-basis: 100%;
+    position: relative;
+    padding: .75rem 1rem;
     
     background: $white;
-    border: 1px solid $gold-light;
-    border-radius: 30px;
-    
-    @media (min-width: 370px) {
-      flex-basis: calc(50% - 1rem);
-    }
-    
-    @media (min-width: 650px) {
-      flex-basis: auto;
-      font-size: 90%;
-    }
+    border: 1px solid rgba($black, .2);
+    border-radius: 5px;
+    cursor: pointer;
   }
   
-  input[type="submit"].button {
+  input[type="submit"].submit-button {
+    padding: 1rem;
     margin-top: 1rem;
-    cursor: pointer;
+    
+    background-color: $pink;
+    color: white;
+    font-size: 100%;
+    font-weight: 600;
     
     @media (min-width: 540px) {
-      margin-top: 0;
+      grid-column: span 2;
     }
   }
   
   &-helper {
     max-width: 70ch;
-    margin: 2rem auto 0;
+    margin: .5rem auto 0;
     
     font-size: 80%;
     

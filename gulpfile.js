@@ -156,7 +156,7 @@ function buildCritical() {
 };
 
 /* ----------------- */
-/* Taks
+/* Tasks
 /* ----------------- */
 
 exports.default = series(parallel(scripts, templates, styles), development);

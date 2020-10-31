@@ -9,3 +9,17 @@
     display: block;
   }
 }
+
+.gifts-widget {
+  background-color: white;
+  border-radius: 10px;
+  max-width: 37.5rem;
+  width: 100%;
+  margin: auto;
+  border: 1px solid rgba($black, .15);
+  box-shadow: 0 10px 20px rgba(0,0,0,.09);
+  
+  .progress {
+    padding: 2rem;
+  }
+}

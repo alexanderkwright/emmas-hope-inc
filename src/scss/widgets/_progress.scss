@@ -1,4 +1,6 @@
 .progress {
+  border-radius: 10px;
+  background-color: white;
   
   &-goal {
     margin-bottom: 1rem;
@@ -6,9 +8,14 @@
     font-size: 200%;
     font-weight: 300;
     text-align: center;
+    
+    .gifts-widget & {
+      font-size: 150%;
+      margin-bottom: 0.5rem;
+    }
   }
   
-  $progress-height: 30px;
+  $progress-height: 20px;
   
   &-bar {
     width: 100%;
@@ -41,7 +48,9 @@
       margin-bottom: 1rem;
       
       flex-basis: 50%;
+      font-size: .6875rem;
       text-align: center;
+      text-transform: uppercase;
       
       @media (min-width: 540px) {
         margin-bottom: 0;
@@ -52,5 +61,6 @@
     
       &-number {
         display: block;
+        font-size: 1rem;
       }
 }
