@@ -69,10 +69,21 @@
     position: relative;
     padding: .75rem 1rem;
     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     background: $white;
     border: 1px solid rgba($black, .2);
     border-radius: 5px;
     cursor: pointer;
+    
+    span {
+      margin-top: .25rem;
+      font-size: .625rem;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+    }
   }
   
   input[type="submit"].submit-button {
@@ -97,6 +108,17 @@
     
     @media (min-width: 540px) {
       font-size: 50%;
+      
+      &:last-of-type {
+        cursor: help;
+        transition: font-size .75s ease-in-out;
+        transition-delay: .75s;
+        
+        &:hover {
+          font-size: 80%;
+          transition-delay: 0s;
+        }
+      }
     }
   }
 }

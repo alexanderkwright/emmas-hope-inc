@@ -46,6 +46,9 @@
   
     &-stat {
       margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
       flex-basis: 50%;
       font-size: .6875rem;
