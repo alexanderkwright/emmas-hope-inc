@@ -2,8 +2,8 @@
 
 {% set page_title = "gifts-of-hope" %}
 
-{% set num_sponsors = 11 %}
-{% set donation_total = 16400 %}
+{% set num_sponsors = 13 %}
+{% set donation_total = 16600 %}
 {% set donation_goal = 17000 %}
 {% set num_families = 85 %}
 
@@ -30,7 +30,7 @@
   <section class="gifts-wrap content-block">
     <div class="gifts-widget">
       <div class="progress">
-        <div class="progress-goal">{{ ((donation_goal - (donation_goal - donation_total)) / 200) | round(0, "ceiling") }}
+        <div class="progress-goal">{{ ((donation_goal - (donation_goal - donation_total)) / 200) | round(0, "floor") }}
           of
           {{ num_families }}
           families sponsored!
