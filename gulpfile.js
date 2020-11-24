@@ -100,7 +100,7 @@ function styles() {
     .pipe(plugins().sassGlob())
     .pipe(plugins().sourcemaps.init())
     .pipe(plugins().postcss([
-      autoprefixer({ browsers: ['last 2 versions'] })
+      autoprefixer({ overrideBrowserslist: ['last 2 versions'] })
     ], { syntax: require('postcss-scss') }))
     .pipe(plugins().sass().on('error', plugins().sass.logError))
     .pipe(plugins().sourcemaps.write())
